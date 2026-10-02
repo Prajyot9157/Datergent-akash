@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d5c63">
-<title>MY DETERGENT BUSINESS — Business Manager</title>
+<title>MY DETERGENT BUSINESS â€” Business Manager</title>
 <style>
 :root{
   --bg:#f4f7f9;--card:#fff;--ink:#0f1e2e;--ink-2:#5a6b7b;--ink-3:#8a99a8;--line:#e4ebf1;
@@ -29,7 +29,8 @@ p{margin:0 0 .5rem}a{color:var(--primary);text-decoration:none}
 .login{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:linear-gradient(160deg,#0d5c63 0%,#0a4a50 45%,#08383d 100%)}
 .login-card{width:100%;max-width:410px;background:var(--card);border-radius:22px;padding:2rem 1.5rem;box-shadow:var(--shadow-lg);text-align:center;animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}
 @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
-.brand-mark{width:60px;height:60px;border-radius:18px;margin:0 auto .9rem;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.9rem}
+.brand-mark{width:60px;height:60px;border-radius:50%;margin:0 auto .9rem;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0}
+.brand-mark img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
 .login-card h1{font-size:1.15rem;color:var(--primary)}
 .login-links{display:flex;justify-content:space-between;margin-top:.85rem;gap:.5rem;flex-wrap:wrap}
 .link{background:none;border:0;color:var(--primary);font-size:.83rem;cursor:pointer;padding:.35rem;font-weight:600;font-family:inherit}
@@ -57,7 +58,7 @@ input[type=checkbox]{width:auto;accent-color:var(--primary)}
 .app{min-height:100dvh;display:flex}
 .sidebar{display:none;width:240px;flex-shrink:0;background:#0d3f44;color:#cfe6e8;padding:1.1rem .75rem;position:sticky;top:0;height:100dvh;overflow-y:auto}
 .sidebar .side-brand{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:.75rem}
-.sidebar .side-brand .mk{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.sidebar .side-brand .mk{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
 .sidebar .side-brand strong{color:#fff;font-size:.85rem;display:block;line-height:1.2}
 .sidebar .side-brand span{font-size:.7rem;color:#8fb6ba}
 .sidebar nav{display:flex;flex-direction:column;gap:.15rem}
@@ -82,21 +83,30 @@ input[type=checkbox]{width:auto;accent-color:var(--primary)}
 .bottom-nav a,.bottom-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:.1rem;background:none;border:0;color:var(--ink-3);font-size:.66rem;font-weight:650;padding:.35rem .1rem;cursor:pointer;border-radius:11px;font-family:inherit}
 .bottom-nav a i,.bottom-nav button i{font-style:normal;font-size:1.22rem;line-height:1}
 .bottom-nav a.active{color:var(--primary)}
-.fab-add{flex:0 0 auto !important;width:54px;height:54px;border-radius:18px;background:linear-gradient(145deg,var(--primary-2),var(--primary));color:#fff !important;font-size:1.7rem !important;font-weight:300;box-shadow:0 6px 18px -4px rgba(13,92,99,.55);margin-top:-20px}
+.fab-add{flex:0 0 auto !important;width:54px;height:54px;border-radius:50%;padding:0;position:relative;overflow:visible;background:var(--primary-soft);border:2px solid #fff;box-shadow:0 6px 18px -4px rgba(13,92,99,.55);margin-top:-20px}
 .fab-add:active{transform:scale(.93)}
+.bottom-nav .fab-add{padding:0;border-radius:50%}
+.fab-add img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.fab-add::after{content:'+';position:absolute;right:-3px;bottom:-3px;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:1rem;font-weight:800;line-height:1;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);pointer-events:none}
 
 /* ---------- MOBILE DRAWER ---------- */
 .drawer-backdrop{position:fixed;inset:0;background:rgba(10,25,35,.5);backdrop-filter:blur(3px);z-index:90;animation:fade .18s ease}
 .drawer{position:fixed;top:0;bottom:0;left:0;width:260px;max-width:82vw;background:#0d3f44;color:#cfe6e8;z-index:95;padding:1.1rem .75rem calc(1.1rem + var(--safe-b));overflow-y:auto;animation:slideRight .22s cubic-bezier(.2,.9,.3,1)}
 @keyframes slideRight{from{transform:translateX(-100%)}to{transform:none}}
 .drawer .side-brand{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:.75rem}
-.drawer .side-brand .mk{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.drawer .side-brand .mk{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
 .drawer .side-brand strong{color:#fff;font-size:.85rem;display:block;line-height:1.2}
 .drawer .side-brand span{font-size:.7rem;color:#8fb6ba}
 .drawer nav{display:flex;flex-direction:column;gap:.15rem}
 .drawer a{display:flex;align-items:center;gap:.7rem;padding:.66rem .7rem;border-radius:10px;color:#cfe6e8;font-size:.88rem;font-weight:550}
 .drawer a i{font-style:normal;font-size:1.05rem;width:1.3rem;text-align:center}
 .drawer a.active{background:#fff;color:var(--primary);font-weight:700}
+
+/* ---------- CIRCULAR BRAND LOGOS ---------- */
+.sidebar .side-brand .mk,.drawer .side-brand .mk{padding:0;overflow:hidden;border-radius:50%;background:rgba(255,255,255,.12)}
+.sidebar .side-brand .mk img,.drawer .side-brand .mk img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.top-brand{width:34px;height:34px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--primary-soft);border:1.5px solid var(--line)}
+.top-brand img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ---------- CARDS / STATS ---------- */
 .card{background:var(--card);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);border:1px solid var(--line);margin-bottom:.85rem}
@@ -285,7 +295,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 <!-- ================= LOGIN ================= -->
 <div id="login" class="login">
   <div class="login-card">
-    <div class="brand-mark">🧼</div>
+    <div class="brand-mark"><img src="https://res.cloudinary.com/dygxni81n/image/upload/v1790771115/InShot_20260930_175051320_1_gimt46.png" alt="Logo"></div>
     <h1 id="loginBizName">MY DETERGENT BUSINESS</h1>
     <p class="muted small" id="loginSub">Business Management System</p>
     <form id="loginForm" class="form" autocomplete="on" novalidate>
@@ -312,24 +322,25 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   <aside class="sidebar" id="sidebar"></aside>
   <div class="content">
     <header class="topbar">
-      <button class="icon-btn only-mobile" id="menuBtn" aria-label="Menu">☰</button>
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="Menu">â˜°</button>
+      <div class="top-brand"><img src="https://res.cloudinary.com/dygxni81n/image/upload/v1790771115/InShot_20260930_175051320_1_gimt46.png" alt="Logo"></div>
       <div class="biz-title">
         <strong id="topBizName">MY DETERGENT BUSINESS</strong>
-        <span class="cloud-badge off" id="cloudBadge">● Offline</span>
+        <span class="cloud-badge off" id="cloudBadge">â— Offline</span>
       </div>
       <div class="topbar-actions">
-        <button class="icon-btn" id="searchBtn" aria-label="Search">🔍</button>
-        <button class="icon-btn" id="profileBtn" aria-label="Profile">👤</button>
+        <button class="icon-btn" id="searchBtn" aria-label="Search">ðŸ”</button>
+        <button class="icon-btn" id="profileBtn" aria-label="Profile">ðŸ‘¤</button>
       </div>
     </header>
     <main id="view" class="view"></main>
   </div>
   <nav class="bottom-nav">
-    <a href="#/dashboard" data-nav="dashboard"><i>🏠</i><span>Home</span></a>
-    <a href="#/sales" data-nav="sales"><i>🧾</i><span>Sales</span></a>
-    <button id="fabAdd" class="fab-add" aria-label="Quick add">+</button>
-    <a href="#/inventory" data-nav="inventory"><i>📦</i><span>Stock</span></a>
-    <a href="#/more" data-nav="more"><i>☰</i><span>More</span></a>
+    <a href="#/dashboard" data-nav="dashboard"><i>ðŸ </i><span>Home</span></a>
+    <a href="#/sales" data-nav="sales"><i>ðŸ§¾</i><span>Sales</span></a>
+    <button id="fabAdd" class="fab-add" aria-label="Quick add"><img src="https://res.cloudinary.com/dygxni81n/image/upload/v1790771115/InShot_20260930_175051320_1_gimt46.png" alt=""></button>
+    <a href="#/inventory" data-nav="inventory"><i>ðŸ“¦</i><span>Stock</span></a>
+    <a href="#/more" data-nav="more"><i>â˜°</i><span>More</span></a>
   </nav>
 </div>
 
@@ -380,11 +391,16 @@ const AUTH_ERRORS = {
   'auth/weak-password': 'Password must be at least 6 characters.',
   'auth/network-request-failed': 'Network error. Check your internet connection.',
   'auth/too-many-requests': 'Too many attempts. Please try again later.',
-  'auth/operation-not-allowed': 'Email/Password sign-in is not enabled in your Firebase console (Authentication → Sign-in method).',
+  'auth/operation-not-allowed': 'Email/Password sign-in is not enabled in your Firebase console (Authentication â†’ Sign-in method).',
   'auth/missing-password': 'Please enter your password.',
   'auth/configuration-not-found': 'Firebase Authentication is not configured for this project.'
 };
 const authMsg = (err) => AUTH_ERRORS[err?.code] || err?.message || 'Something went wrong. Please try again.';
+
+/* ============================================================
+   BRAND LOGO
+   ============================================================ */
+const BRAND_LOGO = 'https://res.cloudinary.com/dygxni81n/image/upload/v1790771115/InShot_20260930_175051320_1_gimt46.png';
 
 /* ============================================================
    UTILS
@@ -393,12 +409,12 @@ const U = {
   uid(p=''){return p+Date.now().toString(36).slice(-5)+Math.random().toString(36).slice(2,7)},
   esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))},
   round2(n){return Math.round((Number(n)||0)*100)/100},
-  money(n){return '₹'+U.round2(n).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})},
-  money0(n){return '₹'+Math.round(Number(n)||0).toLocaleString('en-IN')},
+  money(n){return 'â‚¹'+U.round2(n).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})},
+  money0(n){return 'â‚¹'+Math.round(Number(n)||0).toLocaleString('en-IN')},
   num(n,d=2){return (Number(n)||0).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d})},
   iso(d){const x=new Date(d.getTime()-d.getTimezoneOffset()*60000);return x.toISOString().slice(0,10)},
   today(){return U.iso(new Date())},
-  date(s){if(!s)return '—';const d=new Date(s+'T00:00:00');if(isNaN(d))return '—';return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear()},
+  date(s){if(!s)return 'â€”';const d=new Date(s+'T00:00:00');if(isNaN(d))return 'â€”';return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear()},
   addDays(s,n){const d=new Date(s+'T00:00:00');d.setDate(d.getDate()+n);return U.iso(d)},
   daysBetweenDates(a,b){const d1=new Date(a+'T00:00:00'),d2=new Date(b+'T00:00:00');return Math.round((d2-d1)/86400000)},
   startOfWeek(d=new Date()){const x=new Date(d);const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);return U.iso(x)},
@@ -515,7 +531,7 @@ const Cloud = {
         this.status = 'ok';
         App.updateCloudBadge();
         if(document.querySelector('.overlay')){
-          U.toast('Cloud update received — close this form to see it','warn');
+          U.toast('Cloud update received â€” close this form to see it','warn');
         }else{
           App.refresh();
         }
@@ -702,7 +718,7 @@ const DB = {
       const need=U.round2((Number(it.qty)||0)*scale);
       const avail=this.rawStock(it.materialId);
       const unitCost=Number(m?.cost)||0;
-      return {materialId:it.materialId,name:m?.name||'—',unit:m?.unit||'',qty:need,unitCost,total:U.round2(need*unitCost),available:avail,shortage:U.round2(Math.max(0,need-avail))};
+      return {materialId:it.materialId,name:m?.name||'â€”',unit:m?.unit||'',qty:need,unitCost,total:U.round2(need*unitCost),available:avail,shortage:U.round2(Math.max(0,need-avail))};
     });
   },
 
@@ -851,9 +867,9 @@ const DB = {
   reminders(){
     const out=[];
     const lowProd=this.lowStockProducts();
-    if(lowProd.length)out.push({icon:'⚠️',level:'warn',title:`${lowProd.length} product${lowProd.length===1?'':'s'} low on stock`,detail:lowProd.slice(0,3).map(x=>x.p.name).join(', ')});
+    if(lowProd.length)out.push({icon:'âš ï¸',level:'warn',title:`${lowProd.length} product${lowProd.length===1?'':'s'} low on stock`,detail:lowProd.slice(0,3).map(x=>x.p.name).join(', ')});
     const lowRaw=this.lowStockMaterials();
-    if(lowRaw.length)out.push({icon:'🧪',level:'warn',title:`${lowRaw.length} raw material${lowRaw.length===1?'':'s'} running low`,detail:lowRaw.slice(0,3).map(x=>x.m.name).join(', ')});
+    if(lowRaw.length)out.push({icon:'ðŸ§ª',level:'warn',title:`${lowRaw.length} raw material${lowRaw.length===1?'':'s'} running low`,detail:lowRaw.slice(0,3).map(x=>x.m.name).join(', ')});
     const today=U.today();
     let overdue=0,overdueTotal=0;
     for(const s of this.all('sales')){
@@ -861,14 +877,14 @@ const DB = {
       const age=U.daysBetweenDates(s.date,today);
       if(age>30){overdue++;overdueTotal+=Number(s.pending)}
     }
-    if(overdue)out.push({icon:'⏰',level:'danger',title:`${overdue} payment${overdue===1?'':'s'} overdue (>30 days)`,detail:`${U.money0(overdueTotal)} outstanding`});
+    if(overdue)out.push({icon:'â°',level:'danger',title:`${overdue} payment${overdue===1?'':'s'} overdue (>30 days)`,detail:`${U.money0(overdueTotal)} outstanding`});
     const pendDel=this.all('deliveries').filter(d=>d.status==='Pending');
-    if(pendDel.length)out.push({icon:'🚚',level:'info',title:`${pendDel.length} deliver${pendDel.length===1?'y':'ies'} pending`,detail:pendDel.slice(0,2).map(d=>this.find('customers',d.customerId)?.name||'—').join(', ')});
+    if(pendDel.length)out.push({icon:'ðŸšš',level:'info',title:`${pendDel.length} deliver${pendDel.length===1?'y':'ies'} pending`,detail:pendDel.slice(0,2).map(d=>this.find('customers',d.customerId)?.name||'â€”').join(', ')});
     const soon=U.addDays(today,30);
     const expiring=this.all('production').filter(b=>b.expiryDate&&b.expiryDate>=today&&b.expiryDate<=soon);
-    if(expiring.length)out.push({icon:'📅',level:'warn',title:`${expiring.length} batch${expiring.length===1?'':'es'} nearing expiry`,detail:expiring.slice(0,2).map(b=>b.number).join(', ')});
+    if(expiring.length)out.push({icon:'ðŸ“…',level:'warn',title:`${expiring.length} batch${expiring.length===1?'':'es'} nearing expiry`,detail:expiring.slice(0,2).map(b=>b.number).join(', ')});
     const pay=this.pendingSupplierPayments();
-    if(pay>0)out.push({icon:'📤',level:'info',title:`${U.money0(pay)} payable to suppliers`,detail:'Review supplier balances'});
+    if(pay>0)out.push({icon:'ðŸ“¤',level:'info',title:`${U.money0(pay)} payable to suppliers`,detail:'Review supplier balances'});
     return out;
   },
 
@@ -892,8 +908,8 @@ const Chart={
   empty(c,msg='No data available for this period'){const{ctx,w,h}=this._setup(c);ctx.fillStyle='#8a99a8';ctx.font='600 13px -apple-system, sans-serif';ctx.textAlign='center';ctx.fillText(msg,w/2,h/2)},
   bar(c,data,o={}){if(!data.length||data.every(d=>!d.value))return this.empty(c);const{ctx,w,h}=this._setup(c,o.height);const pad={t:16,r:8,b:30,l:8};const color=o.color||'#12787f';const max=Math.max(...data.map(d=>d.value),1);const iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;const slot=iw/data.length;const bw=Math.min(slot*0.62,44);
     data.forEach((d,i)=>{const x=pad.l+slot*i+(slot-bw)/2;const bh=(d.value/max)*ih;const y=pad.t+ih-bh;const g=ctx.createLinearGradient(0,y,0,y+Math.max(bh,2));g.addColorStop(0,color);g.addColorStop(1,color+'99');ctx.fillStyle=g;const r=Math.min(6,bw/2);this._rr(ctx,x,y,bw,Math.max(bh,2),r);ctx.fill();
-      if(o.showValues&&d.value){ctx.fillStyle='#5a6b7b';ctx.font='600 9px -apple-system, sans-serif';ctx.textAlign='center';ctx.fillText(U.money0(d.value).replace('₹',''),x+bw/2,y-4)}
-      ctx.fillStyle='#8a99a8';ctx.font='600 10px -apple-system, sans-serif';ctx.textAlign='center';const l=String(d.label).length>9?String(d.label).slice(0,8)+'…':d.label;ctx.fillText(l,x+bw/2,h-10)})},
+      if(o.showValues&&d.value){ctx.fillStyle='#5a6b7b';ctx.font='600 9px -apple-system, sans-serif';ctx.textAlign='center';ctx.fillText(U.money0(d.value).replace('â‚¹',''),x+bw/2,y-4)}
+      ctx.fillStyle='#8a99a8';ctx.font='600 10px -apple-system, sans-serif';ctx.textAlign='center';const l=String(d.label).length>9?String(d.label).slice(0,8)+'â€¦':d.label;ctx.fillText(l,x+bw/2,h-10)})},
   line(c,data,o={}){if(!data.length||data.every(d=>!d.value))return this.empty(c);const{ctx,w,h}=this._setup(c,o.height);const pad={t:16,r:12,b:30,l:12};const color=o.color||'#0f9d58';const max=Math.max(...data.map(d=>d.value),1);const iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;const step=data.length>1?iw/(data.length-1):0;
     const pts=data.map((d,i)=>({x:pad.l+step*i,y:pad.t+ih-(d.value/max)*ih}));
     const g=ctx.createLinearGradient(0,pad.t,0,pad.t+ih);g.addColorStop(0,color+'38');g.addColorStop(1,color+'05');ctx.beginPath();ctx.moveTo(pts[0].x,pad.t+ih);pts.forEach(p=>ctx.lineTo(p.x,p.y));ctx.lineTo(pts[pts.length-1].x,pad.t+ih);ctx.closePath();ctx.fillStyle=g;ctx.fill();
@@ -915,7 +931,7 @@ const UI={
   form({title,fields,values={},submitLabel='Save',onSubmit,wide=false,onRender}){
     const root=document.getElementById('modalRoot');const ov=document.createElement('div');ov.className='overlay';
     const sheet=document.createElement('div');sheet.className='sheet';if(wide)sheet.style.maxWidth='760px';
-    sheet.innerHTML=`<div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>✕</button></div><form class="form" novalidate><div class="fields"></div><p class="error" data-err></p><div class="sheet-actions"><button type="button" class="btn" data-close>Cancel</button><button type="submit" class="btn primary" data-submit>${U.esc(submitLabel)}</button></div></form>`;
+    sheet.innerHTML=`<div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>âœ•</button></div><form class="form" novalidate><div class="fields"></div><p class="error" data-err></p><div class="sheet-actions"><button type="button" class="btn" data-close>Cancel</button><button type="submit" class="btn primary" data-submit>${U.esc(submitLabel)}</button></div></form>`;
     const fieldsEl=sheet.querySelector('.fields');
     fieldsEl.style.display='grid';
     fieldsEl.style.gridTemplateColumns='1fr 1fr';
@@ -929,7 +945,7 @@ const UI={
       e.preventDefault();errEl.textContent='';
       const v=this.readForm(form,fields);const err=this.validate(fields,v);
       if(err){errEl.textContent=err;return}
-      submitBtn.disabled=true;const orig=submitBtn.textContent;submitBtn.textContent='Saving…';
+      submitBtn.disabled=true;const orig=submitBtn.textContent;submitBtn.textContent='Savingâ€¦';
       try{const res=await onSubmit(v,form);if(res===true||res===undefined)close();else if(typeof res==='string')errEl.textContent=res}
       catch(ex){console.error(ex);errEl.textContent=ex?.message||'Unable to save.'}
       finally{submitBtn.disabled=false;submitBtn.textContent=orig}
@@ -970,7 +986,7 @@ const UI={
   },
   info(title,html){
     const root=document.getElementById('modalRoot');const ov=document.createElement('div');ov.className='overlay';
-    ov.innerHTML=`<div class="sheet"><div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>✕</button></div><div>${html}</div><div class="sheet-actions"><button class="btn primary" data-close>Close</button></div></div>`;
+    ov.innerHTML=`<div class="sheet"><div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>âœ•</button></div><div>${html}</div><div class="sheet-actions"><button class="btn primary" data-close>Close</button></div></div>`;
     root.appendChild(ov);
     const close=()=>ov.remove();
     ov.addEventListener('click',e=>{if(e.target===ov||e.target.closest('[data-close]'))close()});
@@ -978,7 +994,7 @@ const UI={
   },
   actions(title,items){
     const root=document.getElementById('modalRoot');const ov=document.createElement('div');ov.className='overlay';
-    ov.innerHTML=`<div class="sheet" style="max-width:420px"><div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>✕</button></div><div class="list" style="margin-bottom:.4rem">${items.map((it,i)=>`<button class="list-item" data-i="${i}" style="text-align:left;width:100%;font-family:inherit;border:1px solid var(--line)"><div class="li-top"><span class="li-title">${it.icon||''} ${U.esc(it.label)}</span></div>${it.sub?`<div class="li-sub">${U.esc(it.sub)}</div>`:''}</button>`).join('')}</div></div>`;
+    ov.innerHTML=`<div class="sheet" style="max-width:420px"><div class="grabber"></div><div class="sheet-head"><h3>${U.esc(title)}</h3><button class="icon-btn" data-close>âœ•</button></div><div class="list" style="margin-bottom:.4rem">${items.map((it,i)=>`<button class="list-item" data-i="${i}" style="text-align:left;width:100%;font-family:inherit;border:1px solid var(--line)"><div class="li-top"><span class="li-title">${it.icon||''} ${U.esc(it.label)}</span></div>${it.sub?`<div class="li-sub">${U.esc(it.sub)}</div>`:''}</button>`).join('')}</div></div>`;
     root.appendChild(ov);
     const close=()=>ov.remove();
     ov.addEventListener('click',e=>{if(e.target===ov||e.target.closest('[data-close]'))return close();const b=e.target.closest('[data-i]');if(b){close();items[Number(b.dataset.i)].onClick?.()}});
@@ -995,10 +1011,10 @@ Views.statCard=(cls,label,value,sub)=>`<div class="stat ${cls}"><div class="lbl"
 Views.badge=(st)=>{const m={Paid:'paid',Partial:'partial',Pending:'pending',Delivered:'paid','In Transit':'info',Delayed:'pending',Returned:'pending'};return `<span class="badge ${m[st]||'gray'}">${U.esc(st)}</span>`};
 Views.saleStatus=(s)=>{const t=Number(s.total)||0,p=Number(s.paid)||0;if(t<=0)return 'Paid';if(p>=t-0.01)return 'Paid';if(p>0)return 'Partial';return 'Pending'};
 Views.customerName=(id)=>DB.find('customers',id)?.name||'Walk-in customer';
-Views.supplierName=(id)=>DB.find('suppliers',id)?.name||'—';
-Views.productName=(id)=>DB.find('products',id)?.name||'—';
-Views.materialName=(id)=>DB.find('rawMaterials',id)?.name||'—';
-Views.productLabel=(p)=>{if(!p)return '—';const par=p.variantOf?DB.find('products',p.variantOf):null;return par?`${par.name} — ${p.variantLabel||p.size||''}`:p.name};
+Views.supplierName=(id)=>DB.find('suppliers',id)?.name||'â€”';
+Views.productName=(id)=>DB.find('products',id)?.name||'â€”';
+Views.materialName=(id)=>DB.find('rawMaterials',id)?.name||'â€”';
+Views.productLabel=(p)=>{if(!p)return 'â€”';const par=p.variantOf?DB.find('products',p.variantOf):null;return par?`${par.name} â€” ${p.variantLabel||p.size||''}`:p.name};
 Views.defaultRange=()=>{const d=new Date();return{key:'month',from:U.startOfMonth(d),to:U.endOfMonth(d)}};
 Views.daysBetween=(from,to)=>{const out=[];let d=new Date(from+'T00:00:00');const end=new Date(to+'T00:00:00');let g=0;while(d<=end&&g<400){out.push(U.iso(d));d.setDate(d.getDate()+1);g++}return out};
 
@@ -1016,7 +1032,7 @@ Views.dashboard=(state)=>{
   const recentExpenses=expenses.slice(0,4);
 
   return `
-  <div class="page-head"><div><h1>Dashboard</h1><p>${U.date(range.from)} – ${U.date(range.to)}</p></div></div>
+  <div class="page-head"><div><h1>Dashboard</h1><p>${U.date(range.from)} â€“ ${U.date(range.to)}</p></div></div>
   <div class="chips">
     ${[['today','Today'],['week','This Week'],['month','This Month'],['year','This Year'],['custom','Custom']].map(([k,l])=>`<button class="chip ${range.key===k?'active':''}" data-range="${k}">${l}</button>`).join('')}
   </div>
@@ -1026,7 +1042,7 @@ Views.dashboard=(state)=>{
     ${Views.statCard('c-sales','Total Sales',U.money(pl.revenue),`${sales.length} invoice${sales.length===1?'':'s'}`)}
     ${Views.statCard('c-exp','Expenses',U.money(U.sum(expenses,e=>e.amount)),`${expenses.length} entr${expenses.length===1?'y':'ies'}`)}
     ${Views.statCard('c-profit','Net Profit',U.money(pl.netProfit),pl.netProfit>=0?'Profit':'Loss')}
-    ${Views.statCard('c-cash','Net Cash',U.money(cf.net),`In ${U.money0(cf.cashIn)} · Out ${U.money0(cf.cashOut)}`)}
+    ${Views.statCard('c-cash','Net Cash',U.money(cf.net),`In ${U.money0(cf.cashIn)} Â· Out ${U.money0(cf.cashOut)}`)}
     ${Views.statCard('c-qty','Products Sold',U.num(productsSold,0),'units')}
     ${Views.statCard('c-pend','Pending Payments',U.money(pending),'from customers')}
   </div>
@@ -1040,12 +1056,12 @@ Views.dashboard=(state)=>{
 
   <div class="grid-dash">
     <div class="card">
-      <div class="card-head"><h3>Recent Sales</h3><a href="#/sales" class="tiny">View all →</a></div>
-      ${recentSales.length?`<div class="list">${recentSales.map(s=>`<div class="list-item" data-open-sale="${s.id}"><div class="li-top"><div><div class="li-title">${U.esc(Views.customerName(s.customerId))}</div><div class="li-sub">${U.date(s.date)} · ${U.esc(s.number||'')}</div></div><div class="li-amt">${U.money0(s.total)}</div></div></div>`).join('')}</div>`:Views.empty('🧾','No sales recorded yet.')}
+      <div class="card-head"><h3>Recent Sales</h3><a href="#/sales" class="tiny">View all â†’</a></div>
+      ${recentSales.length?`<div class="list">${recentSales.map(s=>`<div class="list-item" data-open-sale="${s.id}"><div class="li-top"><div><div class="li-title">${U.esc(Views.customerName(s.customerId))}</div><div class="li-sub">${U.date(s.date)} Â· ${U.esc(s.number||'')}</div></div><div class="li-amt">${U.money0(s.total)}</div></div></div>`).join('')}</div>`:Views.empty('ðŸ§¾','No sales recorded yet.')}
     </div>
     <div class="card">
-      <div class="card-head"><h3>Recent Expenses</h3><a href="#/expenses" class="tiny">View all →</a></div>
-      ${recentExpenses.length?`<div class="list">${recentExpenses.map(e=>`<div class="list-item"><div class="li-top"><div><div class="li-title">${U.esc(e.category)}</div><div class="li-sub">${U.date(e.date)} · ${U.esc(e.description||'—')}</div></div><div class="li-amt neg">${U.money0(e.amount)}</div></div></div>`).join('')}</div>`:Views.empty('💸','No expenses recorded yet.')}
+      <div class="card-head"><h3>Recent Expenses</h3><a href="#/expenses" class="tiny">View all â†’</a></div>
+      ${recentExpenses.length?`<div class="list">${recentExpenses.map(e=>`<div class="list-item"><div class="li-top"><div><div class="li-title">${U.esc(e.category)}</div><div class="li-sub">${U.date(e.date)} Â· ${U.esc(e.description||'â€”')}</div></div><div class="li-amt neg">${U.money0(e.amount)}</div></div></div>`).join('')}</div>`:Views.empty('ðŸ’¸','No expenses recorded yet.')}
     </div>
   </div>`;
 };
@@ -1068,10 +1084,10 @@ Views.recipes=()=>{
     const cost=DB.recipeCost(r.id);
     const cpu=DB.recipeCostPerUnit(r.id);
     return `<div class="list-item" data-open-recipe="${r.id}">
-      <div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(r.name)}</div><div class="li-sub">${U.esc(prod?Views.productLabel(prod):'—')} · yields ${U.num(r.outputQty,2)} ${U.esc(r.outputUnit||'')}</div></div><div class="li-amt">${U.money0(cost)}</div></div>
+      <div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(r.name)}</div><div class="li-sub">${U.esc(prod?Views.productLabel(prod):'â€”')} Â· yields ${U.num(r.outputQty,2)} ${U.esc(r.outputUnit||'')}</div></div><div class="li-amt">${U.money0(cost)}</div></div>
       <div class="li-meta"><span>${(r.items||[]).length} material${(r.items||[]).length===1?'':'s'}</span><span>Cost/unit: <b>${U.money(cpu)}</b></span></div>
     </div>`;
-  }).join('')}</div>`:`<div class="card">${Views.empty('🧪','No recipes added yet. Create one to link raw materials to a product.')}</div>`}
+  }).join('')}</div>`:`<div class="card">${Views.empty('ðŸ§ª','No recipes added yet. Create one to link raw materials to a product.')}</div>`}
   `;
 };
 
@@ -1088,7 +1104,7 @@ Views.recipeForm=(existing)=>{
   const renderItems=(container)=>{
     container.innerHTML=items.map((it,idx)=>`
       <div class="line-item" data-idx="${idx}">
-        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">✕</button>`:''}
+        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">âœ•</button>`:''}
         <div class="li-grid">
           <label style="grid-column:1/-1">Material *
             <select data-f="materialId" data-idx="${idx}">
@@ -1134,8 +1150,8 @@ Views.recipeForm=(existing)=>{
       const valid=items.filter(i=>i.materialId&&Number(i.qty)>0);
       if(!valid.length)return 'Add at least one material with a valid quantity.';
       const rec={name:v.name,productId:v.productId,outputQty:Number(v.outputQty),outputUnit:v.outputUnit,items:valid.map(i=>({materialId:i.materialId,qty:Number(i.qty)})),notes:v.notes||''};
-      if(editing){DB.update('recipes',existing.id,rec);U.toast('✓ Recipe updated','ok')}
-      else{DB.insert('recipes',rec);U.toast('✓ Recipe saved','ok')}
+      if(editing){DB.update('recipes',existing.id,rec);U.toast('âœ“ Recipe updated','ok')}
+      else{DB.insert('recipes',rec);U.toast('âœ“ Recipe saved','ok')}
       return true;
     }
   });
@@ -1143,13 +1159,13 @@ Views.recipeForm=(existing)=>{
 
 Views.recipeDetail=(id)=>{
   const r=DB.find('recipes',id);
-  if(!r)return `<div class="card">${Views.empty('❓','Recipe not found.')}</div>`;
+  if(!r)return `<div class="card">${Views.empty('â“','Recipe not found.')}</div>`;
   const prod=DB.find('products',r.productId);
   const cost=DB.recipeCost(id);
   const cpu=DB.recipeCostPerUnit(id);
 
   return `
-  <div class="page-head"><div><h1>${U.esc(r.name)}</h1><p>${U.esc(prod?Views.productLabel(prod):'—')}</p></div><button class="btn sm" onclick="history.back()">← Back</button></div>
+  <div class="page-head"><div><h1>${U.esc(r.name)}</h1><p>${U.esc(prod?Views.productLabel(prod):'â€”')}</p></div><button class="btn sm" onclick="history.back()">â† Back</button></div>
   <div class="stat-grid" style="grid-template-columns:repeat(2,1fr)">
     ${Views.statCard('c-exp','Batch Cost',U.money(cost),`yields ${U.num(r.outputQty,2)} ${U.esc(r.outputUnit||'')}`)}
     ${Views.statCard('c-sales','Cost per Unit',U.money(cpu),'at current material prices')}
@@ -1159,15 +1175,15 @@ Views.recipeDetail=(id)=>{
     ${(r.items||[]).map(it=>{
       const m=DB.find('rawMaterials',it.materialId);
       const avail=DB.rawStock(it.materialId);
-      return `<div class="recipe-line"><span>${U.esc(m?.name||'—')} <span class="muted tiny">(${U.esc(m?.unit||'')})</span></span><span><b>${U.num(it.qty,3)}</b> · avail ${U.num(avail,2)}</span></div>`;
+      return `<div class="recipe-line"><span>${U.esc(m?.name||'â€”')} <span class="muted tiny">(${U.esc(m?.unit||'')})</span></span><span><b>${U.num(it.qty,3)}</b> Â· avail ${U.num(avail,2)}</span></div>`;
     }).join('')}
     ${r.notes?`<div class="tiny muted" style="margin-top:.6rem">${U.esc(r.notes)}</div>`:''}
   </div>
   <div class="card">
     <div class="row wrap">
-      <button class="btn primary" data-produce-recipe="${r.id}">🏭 Produce from this recipe</button>
-      <button class="btn" data-edit-recipe="${r.id}">✏️ Edit</button>
-      <button class="btn danger" data-del-recipe="${r.id}">🗑 Delete</button>
+      <button class="btn primary" data-produce-recipe="${r.id}">ðŸ­ Produce from this recipe</button>
+      <button class="btn" data-edit-recipe="${r.id}">âœï¸ Edit</button>
+      <button class="btn danger" data-del-recipe="${r.id}">ðŸ—‘ Delete</button>
     </div>
   </div>`;
 };
@@ -1188,15 +1204,15 @@ Views.products=(state)=>{
     const variants=childrenOf(p.id);
     return `
       <div class="list-item" data-open-product="${p.id}" style="${indent?'margin-left:1.2rem;border-left:3px solid var(--primary-soft)':''}">
-        <div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(Views.productLabel(p))}${p.active===false?' <span class="badge gray">Inactive</span>':''}</div><div class="li-sub">${U.esc(p.sku||'—')} · ${U.esc(p.category||'Uncategorised')}</div></div><div class="li-amt ${low?'neg':''}">${U.num(stock,0)} <span class="tiny muted">${U.esc(p.unit||'')}</span></div></div>
-        <div class="li-meta"><span>Cost: <b>${U.money(p.costPrice||0)}</b></span><span>Sell: <b>${U.money(p.sellingPrice||0)}</b></span>${variants.length?`<span>${variants.length} variant${variants.length===1?'':'s'}</span>`:''}${low?'<span class="badge pending">⚠ Low</span>':''}</div>
+        <div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(Views.productLabel(p))}${p.active===false?' <span class="badge gray">Inactive</span>':''}</div><div class="li-sub">${U.esc(p.sku||'â€”')} Â· ${U.esc(p.category||'Uncategorised')}</div></div><div class="li-amt ${low?'neg':''}">${U.num(stock,0)} <span class="tiny muted">${U.esc(p.unit||'')}</span></div></div>
+        <div class="li-meta"><span>Cost: <b>${U.money(p.costPrice||0)}</b></span><span>Sell: <b>${U.money(p.sellingPrice||0)}</b></span>${variants.length?`<span>${variants.length} variant${variants.length===1?'':'s'}</span>`:''}${low?'<span class="badge pending">âš  Low</span>':''}</div>
       </div>`+variants.map(v=>cardHTML(v,1)).join('');
   };
 
   return `
   <div class="page-head"><div><h1>Products</h1><p>${rows.length} product${rows.length===1?'':'s'}</p></div><button class="btn primary" data-add-product>+ Add Product</button></div>
-  <div class="card tight"><input class="search-input" id="prodSearch" placeholder="Search product name or SKU…" value="${U.esc(state.prodQ||'')}"></div>
-  ${rows.length?`<div class="list">${parents.map(p=>cardHTML(p)).join('')}${orphans.map(p=>cardHTML(p)).join('')}</div>`:`<div class="card">${Views.empty('📦','No products added yet.')}</div>`}
+  <div class="card tight"><input class="search-input" id="prodSearch" placeholder="Search product name or SKUâ€¦" value="${U.esc(state.prodQ||'')}"></div>
+  ${rows.length?`<div class="list">${parents.map(p=>cardHTML(p)).join('')}${orphans.map(p=>cardHTML(p)).join('')}</div>`:`<div class="card">${Views.empty('ðŸ“¦','No products added yet.')}</div>`}
   `;
 };
 
@@ -1211,11 +1227,11 @@ Views.productForm=(existing)=>{
       {name:'category',label:'Category',type:'text',placeholder:'Powder / Liquid / Other'},
       {name:'size',label:'Size / Weight',type:'text',placeholder:'1 kg, 500 g, 1 L'},
       {name:'unit',label:'Unit',type:'select',value:'pcs',options:['pcs','kg','g','L','ml','box','packet']},
-      {name:'costPrice',label:'Cost Price (₹)',type:'number',required:true,min:0,step:'0.01'},
-      {name:'sellingPrice',label:'Selling Price (₹)',type:'number',required:true,min:0,step:'0.01'},
+      {name:'costPrice',label:'Cost Price (â‚¹)',type:'number',required:true,min:0,step:'0.01'},
+      {name:'sellingPrice',label:'Selling Price (â‚¹)',type:'number',required:true,min:0,step:'0.01'},
       {name:'openingStock',label:'Opening Stock',type:'number',min:0,step:'0.01',value:0},
       {name:'minStock',label:'Minimum Stock Level',type:'number',min:0,step:'0.01',value:10},
-      {name:'variantOf',label:'Is variant of',type:'select',placeholder:'— Not a variant —',options:parents.map(p=>({value:p.id,label:p.name}))},
+      {name:'variantOf',label:'Is variant of',type:'select',placeholder:'â€” Not a variant â€”',options:parents.map(p=>({value:p.id,label:p.name}))},
       {name:'variantLabel',label:'Variant label',type:'text',placeholder:'e.g. 1 kg, 500 g'},
       {name:'description',label:'Description',type:'textarea',col:2},
       {name:'active',label:'Active product',type:'checkbox',value:true}
@@ -1232,13 +1248,13 @@ Views.productForm=(existing)=>{
           DB.insert('invTxns',{date:U.today(),productId:existing.id,type:'opening',qty:Number(v.openingStock),unitCost:Number(v.costPrice)||0,reason:'Opening stock'});
         }
         DB.save();
-        U.toast('✓ Product updated','ok');
+        U.toast('âœ“ Product updated','ok');
       }else{
         const p=DB.insert('products',v);
         if(Number(v.openingStock)>0){
           DB.insert('invTxns',{date:U.today(),productId:p.id,type:'opening',qty:Number(v.openingStock),unitCost:Number(v.costPrice)||0,reason:'Opening stock'});
         }
-        U.toast('✓ Product saved successfully','ok');
+        U.toast('âœ“ Product saved successfully','ok');
       }
       return true;
     }
@@ -1247,7 +1263,7 @@ Views.productForm=(existing)=>{
 
 Views.productDetail=(id)=>{
   const p=DB.find('products',id);
-  if(!p)return `<div class="card">${Views.empty('❓','Product not found.')}</div>`;
+  if(!p)return `<div class="card">${Views.empty('â“','Product not found.')}</div>`;
   const b=DB.productStockBreakdown(id);
   const sv=U.round2(b.current*(Number(p.costPrice)||0));
   const txns=DB.all('invTxns').filter(t=>t.productId===id).sort((a,b2)=>(b2.date||'').localeCompare(a.date||'')).slice(0,40);
@@ -1255,11 +1271,11 @@ Views.productDetail=(id)=>{
   const isNeg=(t)=>['sale','damage'].includes(t.type);
 
   return `
-  <div class="page-head"><div><h1>${U.esc(Views.productLabel(p))}</h1><p>${U.esc(p.sku||'')} · ${U.esc(p.category||'')}</p></div><button class="btn sm" onclick="history.back()">← Back</button></div>
+  <div class="page-head"><div><h1>${U.esc(Views.productLabel(p))}</h1><p>${U.esc(p.sku||'')} Â· ${U.esc(p.category||'')}</p></div><button class="btn sm" onclick="history.back()">â† Back</button></div>
   <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
     ${Views.statCard('c-stock','Current Stock',U.num(b.current,0),U.esc(p.unit||''))}
     ${Views.statCard('c-sales','Stock Value',U.money0(sv),'at cost price')}
-    ${Views.statCard('c-pend','Min Level',U.num(p.minStock||0,0),b.current<=(p.minStock||0)?'⚠ Low':'OK')}
+    ${Views.statCard('c-pend','Min Level',U.num(p.minStock||0,0),b.current<=(p.minStock||0)?'âš  Low':'OK')}
   </div>
   <div class="card">
     <div class="card-head"><h3>Stock Movement</h3></div>
@@ -1267,33 +1283,33 @@ Views.productDetail=(id)=>{
     <div class="kv"><span>+ Purchased</span><span>${U.num(b.purchased,2)}</span></div>
     <div class="kv"><span>+ Produced</span><span>${U.num(b.produced,2)}</span></div>
     <div class="kv"><span>+ Returns</span><span>${U.num(b.returned,2)}</span></div>
-    <div class="kv"><span>− Sold</span><span>${U.num(b.sold,2)}</span></div>
-    <div class="kv"><span>− Damaged</span><span>${U.num(b.damaged,2)}</span></div>
-    <div class="kv"><span>± Adjustments</span><span>${U.num(b.adjustment,2)}</span></div>
+    <div class="kv"><span>âˆ’ Sold</span><span>${U.num(b.sold,2)}</span></div>
+    <div class="kv"><span>âˆ’ Damaged</span><span>${U.num(b.damaged,2)}</span></div>
+    <div class="kv"><span>Â± Adjustments</span><span>${U.num(b.adjustment,2)}</span></div>
     <div class="kv" style="border-top:2px solid var(--line);margin-top:.3rem;padding-top:.5rem"><span><b>Closing Stock</b></span><span><b>${U.num(b.current,2)} ${U.esc(p.unit||'')}</b></span></div>
   </div>
   ${variants.length?`<div class="card"><div class="card-head"><h3>Variants</h3></div>${variants.map(v=>`<div class="kv"><span>${U.esc(v.variantLabel||v.name)}</span><span>${U.num(DB.productStock(v.id),0)} ${U.esc(v.unit||'')}</span></div>`).join('')}</div>`:''}
   <div class="card">
     <div class="card-head"><h3>Stock Ledger</h3><span class="tiny muted">Last 40</span></div>
-    ${txns.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Type</th><th class="num">Qty</th><th class="num">Rate</th><th>Reason</th></tr></thead><tbody>${txns.map(t=>`<tr><td class="nowrap">${U.date(t.date)}</td><td><span class="badge ${t.type==='sale'||t.type==='damage'?'pending':t.type==='production'?'info':t.type==='opening'?'gray':'paid'}">${U.esc(t.type)}</span></td><td class="num ${isNeg(t)?'neg':'pos'}">${isNeg(t)?'−':'+'}${U.num(t.qty,2)}</td><td class="num tiny">${t.unitCost?U.money(t.unitCost):'—'}</td><td class="tiny">${U.esc(t.reason||t.notes||'—')}</td></tr>`).join('')}</tbody></table></div>`:Views.empty('📋','No stock movements yet.')}
+    ${txns.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Type</th><th class="num">Qty</th><th class="num">Rate</th><th>Reason</th></tr></thead><tbody>${txns.map(t=>`<tr><td class="nowrap">${U.date(t.date)}</td><td><span class="badge ${t.type==='sale'||t.type==='damage'?'pending':t.type==='production'?'info':t.type==='opening'?'gray':'paid'}">${U.esc(t.type)}</span></td><td class="num ${isNeg(t)?'neg':'pos'}">${isNeg(t)?'âˆ’':'+'}${U.num(t.qty,2)}</td><td class="num tiny">${t.unitCost?U.money(t.unitCost):'â€”'}</td><td class="tiny">${U.esc(t.reason||t.notes||'â€”')}</td></tr>`).join('')}</tbody></table></div>`:Views.empty('ðŸ“‹','No stock movements yet.')}
   </div>
   <div class="card"><div class="row wrap">
-    <button class="btn" data-stock-action="${p.id}">📥 Add / Remove Stock</button>
-    <button class="btn" data-edit-product="${p.id}">✏️ Edit</button>
-    <button class="btn danger" data-del-product="${p.id}">🗑 Delete</button>
+    <button class="btn" data-stock-action="${p.id}">ðŸ“¥ Add / Remove Stock</button>
+    <button class="btn" data-edit-product="${p.id}">âœï¸ Edit</button>
+    <button class="btn danger" data-del-product="${p.id}">ðŸ—‘ Delete</button>
   </div></div>`;
 };
 
 Views.stockAction=(pid)=>{
   const p=DB.find('products',pid);if(!p)return;
   UI.form({
-    title:'Stock Adjustment — '+p.name,
+    title:'Stock Adjustment â€” '+p.name,
     submitLabel:'Apply',
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
-      {name:'type',label:'Type',type:'select',required:true,value:'purchase',options:[{value:'purchase',label:'Add stock'},{value:'damage',label:'Damaged stock'},{value:'adjustment',label:'Manual adjustment (±)'}]},
+      {name:'type',label:'Type',type:'select',required:true,value:'purchase',options:[{value:'purchase',label:'Add stock'},{value:'damage',label:'Damaged stock'},{value:'adjustment',label:'Manual adjustment (Â±)'}]},
       {name:'qty',label:'Quantity',type:'number',required:true,step:'0.01',help:'For manual adjustment use a negative number to remove stock.'},
-      {name:'unitCost',label:'Unit Cost (₹)',type:'number',min:0,step:'0.01',value:p.costPrice||0},
+      {name:'unitCost',label:'Unit Cost (â‚¹)',type:'number',min:0,step:'0.01',value:p.costPrice||0},
       {name:'reason',label:'Reason',type:'text',required:true,col:2},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
@@ -1307,7 +1323,7 @@ Views.stockAction=(pid)=>{
       if(proj<0)return `This would make stock negative (current: ${U.num(cur,2)}).`;
       DB.addInvTxn({date:v.date,productId:pid,type:v.type,qty,unitCost:v.unitCost,reason:v.reason,notes:v.notes});
       if(v.type==='purchase'&&Number(v.unitCost)>0)DB.update('products',pid,{costPrice:Number(v.unitCost)});
-      U.toast('✓ Stock updated','ok');return true;
+      U.toast('âœ“ Stock updated','ok');return true;
     }
   });
 };
@@ -1326,14 +1342,14 @@ Views.inventory=()=>{
     ${Views.statCard('c-stock','Finished Goods Value',U.money0(totalFinished),`${products.length} products`)}
     ${Views.statCard('c-sales','Raw Material Value',U.money0(totalRaw),`${rawMaterials.length} materials`)}
   </div>
-  ${(lowProducts.length||lowRaw.length)?`<div class="card"><div class="card-head"><h3>⚠️ Low Stock Alerts</h3></div>${lowProducts.map(x=>`<div class="kv"><span>${U.esc(x.p.name)}</span><span class="neg">${U.num(x.stock,0)} / min ${U.num(x.p.minStock,0)}</span></div>`).join('')}${lowRaw.map(x=>`<div class="kv"><span>${U.esc(x.m.name)} <span class="badge gray">raw</span></span><span class="neg">${U.num(x.stock,0)} / min ${U.num(x.m.minQty,0)}</span></div>`).join('')}</div>`:`<div class="card"><div class="alert ok"><span class="ico">✅</span><div><strong>All stock levels are healthy</strong></div></div></div>`}
+  ${(lowProducts.length||lowRaw.length)?`<div class="card"><div class="card-head"><h3>âš ï¸ Low Stock Alerts</h3></div>${lowProducts.map(x=>`<div class="kv"><span>${U.esc(x.p.name)}</span><span class="neg">${U.num(x.stock,0)} / min ${U.num(x.p.minStock,0)}</span></div>`).join('')}${lowRaw.map(x=>`<div class="kv"><span>${U.esc(x.m.name)} <span class="badge gray">raw</span></span><span class="neg">${U.num(x.stock,0)} / min ${U.num(x.m.minQty,0)}</span></div>`).join('')}</div>`:`<div class="card"><div class="alert ok"><span class="ico">âœ…</span><div><strong>All stock levels are healthy</strong></div></div></div>`}
   <div class="chips" id="invTabs"><button class="chip active" data-tab="finished">Finished Goods</button><button class="chip" data-tab="raw">Raw Materials</button></div>
   <div id="invFinished">
-    ${products.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Product</th><th class="num">Opening</th><th class="num">In</th><th class="num">Sold</th><th class="num">Damaged</th><th class="num">Current</th><th class="num">Min</th><th class="num">Value</th><th></th></tr></thead><tbody>${products.map(p=>{const b=DB.productStockBreakdown(p.id);const low=b.current<=(Number(p.minStock)||0);const val=U.round2(b.current*(Number(p.costPrice)||0));return `<tr><td><a href="#/product/${p.id}">${U.esc(Views.productLabel(p))}</a>${low?' <span class="badge pending">⚠</span>':''}</td><td class="num">${U.num(b.opening,0)}</td><td class="num pos">${U.num(b.purchased+b.produced+b.returned,0)}</td><td class="num neg">${U.num(b.sold,0)}</td><td class="num neg">${U.num(b.damaged,0)}</td><td class="num"><b>${U.num(b.current,0)}</b></td><td class="num">${U.num(p.minStock||0,0)}</td><td class="num">${U.money0(val)}</td><td class="right"><button class="btn ghost sm" data-stock-action="${p.id}">±</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('📦','No inventory data available. Add products first.')}</div>`}
+    ${products.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Product</th><th class="num">Opening</th><th class="num">In</th><th class="num">Sold</th><th class="num">Damaged</th><th class="num">Current</th><th class="num">Min</th><th class="num">Value</th><th></th></tr></thead><tbody>${products.map(p=>{const b=DB.productStockBreakdown(p.id);const low=b.current<=(Number(p.minStock)||0);const val=U.round2(b.current*(Number(p.costPrice)||0));return `<tr><td><a href="#/product/${p.id}">${U.esc(Views.productLabel(p))}</a>${low?' <span class="badge pending">âš </span>':''}</td><td class="num">${U.num(b.opening,0)}</td><td class="num pos">${U.num(b.purchased+b.produced+b.returned,0)}</td><td class="num neg">${U.num(b.sold,0)}</td><td class="num neg">${U.num(b.damaged,0)}</td><td class="num"><b>${U.num(b.current,0)}</b></td><td class="num">${U.num(p.minStock||0,0)}</td><td class="num">${U.money0(val)}</td><td class="right"><button class="btn ghost sm" data-stock-action="${p.id}">Â±</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ“¦','No inventory data available. Add products first.')}</div>`}
   </div>
   <div id="invRaw" class="hidden">
-    <div class="card tight" style="margin-bottom:.7rem"><div class="row wrap"><button class="btn sm primary" data-add-material>+ Add Raw Material</button><button class="btn sm" data-raw-action>± Stock Movement</button></div></div>
-    ${rawMaterials.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Material</th><th>Unit</th><th class="num">Current</th><th class="num">Min</th><th class="num">Cost</th><th class="num">Value</th><th></th></tr></thead><tbody>${rawMaterials.map(m=>{const stock=DB.rawStock(m.id);const low=stock<=(Number(m.minQty)||0);return `<tr><td>${U.esc(m.name)}${low?' <span class="badge pending">⚠</span>':''}</td><td>${U.esc(m.unit||'')}</td><td class="num"><b>${U.num(stock,2)}</b></td><td class="num">${U.num(m.minQty||0,2)}</td><td class="num">${U.money(m.cost||0)}</td><td class="num">${U.money0(stock*(Number(m.cost)||0))}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-material="${m.id}">✏️</button><button class="btn ghost sm" data-del-material="${m.id}">🗑</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('🧪','No raw materials added yet.')}</div>`}
+    <div class="card tight" style="margin-bottom:.7rem"><div class="row wrap"><button class="btn sm primary" data-add-material>+ Add Raw Material</button><button class="btn sm" data-raw-action>Â± Stock Movement</button></div></div>
+    ${rawMaterials.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Material</th><th>Unit</th><th class="num">Current</th><th class="num">Min</th><th class="num">Cost</th><th class="num">Value</th><th></th></tr></thead><tbody>${rawMaterials.map(m=>{const stock=DB.rawStock(m.id);const low=stock<=(Number(m.minQty)||0);return `<tr><td>${U.esc(m.name)}${low?' <span class="badge pending">âš </span>':''}</td><td>${U.esc(m.unit||'')}</td><td class="num"><b>${U.num(stock,2)}</b></td><td class="num">${U.num(m.minQty||0,2)}</td><td class="num">${U.money(m.cost||0)}</td><td class="num">${U.money0(stock*(Number(m.cost)||0))}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-material="${m.id}">âœï¸</button><button class="btn ghost sm" data-del-material="${m.id}">ðŸ—‘</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ§ª','No raw materials added yet.')}</div>`}
   </div>`;
 };
 
@@ -1345,8 +1361,8 @@ Views.materialForm=(existing)=>UI.form({
     {name:'unit',label:'Unit',type:'select',value:'kg',options:['kg','g','L','ml','pcs','bag','box']},
     {name:'openingQty',label:'Opening Quantity',type:'number',min:0,step:'0.0001',value:0},
     {name:'minQty',label:'Minimum Quantity',type:'number',min:0,step:'0.0001',value:0},
-    {name:'cost',label:'Purchase Cost (₹ per unit)',type:'number',min:0,step:'0.01'},
-    {name:'supplierId',label:'Preferred Supplier',type:'select',placeholder:'— None —',options:DB.all('suppliers').map(s=>({value:s.id,label:s.name}))}
+    {name:'cost',label:'Purchase Cost (â‚¹ per unit)',type:'number',min:0,step:'0.01'},
+    {name:'supplierId',label:'Preferred Supplier',type:'select',placeholder:'â€” None â€”',options:DB.all('suppliers').map(s=>({value:s.id,label:s.name}))}
   ],
   values:existing||{unit:'kg',openingQty:0,minQty:0},
   onSubmit:(v)=>{
@@ -1357,13 +1373,13 @@ Views.materialForm=(existing)=>UI.form({
         DB.insert('rawTxns',{date:U.today(),materialId:existing.id,type:'opening',qty:Number(v.openingQty),unitCost:Number(v.cost)||0,notes:'Opening stock'});
       }
       DB.save();
-      U.toast('✓ Material updated','ok');
+      U.toast('âœ“ Material updated','ok');
     }else{
       const m=DB.insert('rawMaterials',v);
       if(Number(v.openingQty)>0){
         DB.insert('rawTxns',{date:U.today(),materialId:m.id,type:'opening',qty:Number(v.openingQty),unitCost:Number(v.cost)||0,notes:'Opening stock'});
       }
-      U.toast('✓ Material saved','ok');
+      U.toast('âœ“ Material saved','ok');
     }
     return true;
   }
@@ -1376,9 +1392,9 @@ Views.rawStockAction=()=>{
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
       {name:'materialId',label:'Material',type:'select',required:true,placeholder:'Select material',options:mats.map(m=>({value:m.id,label:m.name}))},
-      {name:'type',label:'Type',type:'select',required:true,value:'purchase',options:[{value:'purchase',label:'Add (purchase)'},{value:'consume',label:'Consume (used)'},{value:'damage',label:'Damaged / wastage'},{value:'adjustment',label:'Manual adjustment (±)'}]},
+      {name:'type',label:'Type',type:'select',required:true,value:'purchase',options:[{value:'purchase',label:'Add (purchase)'},{value:'consume',label:'Consume (used)'},{value:'damage',label:'Damaged / wastage'},{value:'adjustment',label:'Manual adjustment (Â±)'}]},
       {name:'qty',label:'Quantity',type:'number',required:true,step:'0.0001'},
-      {name:'unitCost',label:'Unit Cost (₹)',type:'number',min:0,step:'0.01'},
+      {name:'unitCost',label:'Unit Cost (â‚¹)',type:'number',min:0,step:'0.01'},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
     onSubmit:(v)=>{
@@ -1391,7 +1407,7 @@ Views.rawStockAction=()=>{
       if(proj<0)return `Would make stock negative (current: ${U.num(cur,2)}).`;
       DB.addRawTxn(v);
       if(v.type==='purchase'&&Number(v.unitCost)>0)DB.update('rawMaterials',v.materialId,{cost:Number(v.unitCost)});
-      U.toast('✓ Stock updated','ok');return true;
+      U.toast('âœ“ Stock updated','ok');return true;
     }
   });
 };
@@ -1409,7 +1425,7 @@ Views.production=()=>{
     ${Views.statCard('c-qty','Units Produced',U.num(totalQty,0))}
     ${Views.statCard('c-pend','Wastage',U.num(totalWaste,2),'units')}
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Batch</th><th>Date</th><th>Product</th><th class="num">Qty</th><th class="num">Waste</th><th class="num">Cost</th><th class="num">Cost/Unit</th><th>Mfg / Expiry</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr><td class="nowrap">${U.esc(r.number||'—')}</td><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.productName(r.productId))}</td><td class="num">${U.num(r.qty,0)}</td><td class="num">${U.num(r.wastageQty||0,2)}</td><td class="num">${U.money0(r.totalCost)}</td><td class="num">${U.money(r.costPerUnit)}</td><td class="tiny">${r.mfgDate?U.date(r.mfgDate):'—'}${r.expiryDate?' → '+U.date(r.expiryDate):''}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-production="${r.id}">✏️</button><button class="btn ghost sm" data-del-production="${r.id}">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('🏭','No production batches recorded yet.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Batch</th><th>Date</th><th>Product</th><th class="num">Qty</th><th class="num">Waste</th><th class="num">Cost</th><th class="num">Cost/Unit</th><th>Mfg / Expiry</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr><td class="nowrap">${U.esc(r.number||'â€”')}</td><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.productName(r.productId))}</td><td class="num">${U.num(r.qty,0)}</td><td class="num">${U.num(r.wastageQty||0,2)}</td><td class="num">${U.money0(r.totalCost)}</td><td class="num">${U.money(r.costPerUnit)}</td><td class="tiny">${r.mfgDate?U.date(r.mfgDate):'â€”'}${r.expiryDate?' â†’ '+U.date(r.expiryDate):''}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-production="${r.id}">âœï¸</button><button class="btn ghost sm" data-del-production="${r.id}">ðŸ—‘</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ­','No production batches recorded yet.')}</div>`}
   `;
 };
 
@@ -1428,13 +1444,13 @@ Views.productionForm=(existing)=>{
       {name:'number',label:'Batch ID',type:'text',required:true,col:2},
       {name:'date',label:'Manufacturing Date',type:'date',required:true,value:U.today()},
       {name:'expiryDate',label:'Expiry Date',type:'date'},
-      {name:'recipeId',label:'Recipe (optional)',type:'select',placeholder:'— No recipe —',options:recipes.map(r=>{const p=DB.find('products',r.productId);return {value:r.id,label:`${r.name} → ${Views.productLabel(p)}`}})},
+      {name:'recipeId',label:'Recipe (optional)',type:'select',placeholder:'â€” No recipe â€”',options:recipes.map(r=>{const p=DB.find('products',r.productId);return {value:r.id,label:`${r.name} â†’ ${Views.productLabel(p)}`}})},
       {name:'productId',label:'Product Produced',type:'select',required:true,placeholder:'Select product',options:products.map(p=>({value:p.id,label:Views.productLabel(p)}))},
       {name:'qty',label:'Quantity Produced',type:'number',required:true,min:0.01,step:'0.01'},
       {name:'wastageQty',label:'Wastage (units)',type:'number',min:0,step:'0.01',value:0},
-      {name:'labourCost',label:'Labour Cost (₹)',type:'number',min:0,step:'0.01',value:0},
-      {name:'otherCost',label:'Other Cost (₹)',type:'number',min:0,step:'0.01',value:0},
-      {name:'actualMaterialCost',label:'Actual Material Cost (₹)',type:'number',min:0,step:'0.01',help:'Leave empty to use recipe cost'},
+      {name:'labourCost',label:'Labour Cost (â‚¹)',type:'number',min:0,step:'0.01',value:0},
+      {name:'otherCost',label:'Other Cost (â‚¹)',type:'number',min:0,step:'0.01',value:0},
+      {name:'actualMaterialCost',label:'Actual Material Cost (â‚¹)',type:'number',min:0,step:'0.01',help:'Leave empty to use recipe cost'},
       {name:'updateCostPrice',label:'Update product cost price from batch',type:'checkbox',value:true},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
@@ -1451,7 +1467,7 @@ Views.productionForm=(existing)=>{
 
       const updatePanel=()=>{
         const rid=recipeField.value;const out=document.getElementById('recipePanel');
-        if(!rid){out.innerHTML='<div class="alert info"><span class="ico">ℹ️</span><div><strong>No recipe selected</strong>Material cost and raw material deduction will not be automatic. Add a formula in Recipes to link materials.</div></div>';return}
+        if(!rid){out.innerHTML='<div class="alert info"><span class="ico">â„¹ï¸</span><div><strong>No recipe selected</strong>Material cost and raw material deduction will not be automatic. Add a formula in Recipes to link materials.</div></div>';return}
         const r=DB.find('recipes',rid);
         const qty=Number(qtyField.value)||0;
         if(!r){out.innerHTML='';return}
@@ -1471,7 +1487,7 @@ Views.productionForm=(existing)=>{
               </tr>`).join(''):'<tr><td colspan="4" class="center muted">No ingredients</td></tr>'}
             </tbody></table>
             <div class="kv" style="margin-top:.5rem;border-top:1px solid var(--line)"><span><b>Recipe material cost</b></span><span><b>${U.money(totalCost)}</b></span></div>
-            ${hasShortage?'<div class="alert danger" style="margin-top:.5rem"><span class="ico">⚠️</span><div><strong>Some materials are short</strong>Add raw material stock before saving, or adjust the quantity.</div></div>':'<div class="alert ok" style="margin-top:.5rem"><span class="ico">✅</span><div>All materials available</div></div>'}
+            ${hasShortage?'<div class="alert danger" style="margin-top:.5rem"><span class="ico">âš ï¸</span><div><strong>Some materials are short</strong>Add raw material stock before saving, or adjust the quantity.</div></div>':'<div class="alert ok" style="margin-top:.5rem"><span class="ico">âœ…</span><div>All materials available</div></div>'}
           </div>`;
       };
       recipeField.addEventListener('change',updatePanel);
@@ -1526,11 +1542,11 @@ Views.productionForm=(existing)=>{
         DB.addRawTxn({date:v.date,materialId:req.materialId,type:'consume',qty:req.qty,unitCost:req.unitCost,refId:savedId,notes:'Batch '+v.number});
       }
 
-      /* Auto-update product cost from real batch cost — fixes static-costing gap */
+      /* Auto-update product cost from real batch cost â€” fixes static-costing gap */
       if(v.updateCostPrice&&costPerUnit>0)DB.update('products',v.productId,{costPrice:costPerUnit});
       DB.save();
 
-      U.toast(editing?'✓ Batch updated':'✓ Batch saved — stock updated & materials deducted','ok');
+      U.toast(editing?'âœ“ Batch updated':'âœ“ Batch saved â€” stock updated & materials deducted','ok');
       return true;
     }
   });
@@ -1569,7 +1585,7 @@ Views.sales=(state)=>{
     ${Views.statCard('c-pend','Pending',U.money0(pending))}
   </div>
   <div class="card tight">
-    <input class="search-input" id="salesSearch" placeholder="Search invoice, customer, product…" value="${U.esc(f.q)}">
+    <input class="search-input" id="salesSearch" placeholder="Search invoice, customer, productâ€¦" value="${U.esc(f.q)}">
     <div class="filters" style="margin-top:.6rem">
       <label>From<input type="date" id="salesFrom" value="${f.from}"></label>
       <label>To<input type="date" id="salesTo" value="${f.to}"></label>
@@ -1578,11 +1594,11 @@ Views.sales=(state)=>{
     </div>
     <div class="row wrap" style="margin-top:.5rem">
       <button class="btn sm" id="salesClear">Clear</button>
-      <button class="btn sm" id="salesExport">⬇ Export CSV</button>
-      <button class="btn sm" data-add-return>↩ Return</button>
+      <button class="btn sm" id="salesExport">â¬‡ Export CSV</button>
+      <button class="btn sm" data-add-return>â†© Return</button>
     </div>
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Invoice</th><th>Customer</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th>Status</th><th></th></tr></thead><tbody>${rows.map(s=>{const st=Views.saleStatus(s);const hasDel=DB.all('deliveries').some(d=>d.saleId===s.id);const hasRet=DB.all('salesReturns').some(r=>r.saleId===s.id);return `<tr><td class="nowrap">${U.date(s.date)}${hasDel?' 🚚':''}${hasRet?' ↩':''}</td><td class="nowrap"><a href="#/sale/${s.id}">${U.esc(s.number||'—')}</a></td><td>${U.esc(Views.customerName(s.customerId))}</td><td class="num">${U.money0(s.total)}</td><td class="num">${U.money0(s.paid)}</td><td class="num ${(s.total-s.paid)>0?'neg':''}">${U.money0(s.total-s.paid)}</td><td>${Views.badge(st)}</td><td class="right nowrap"><button class="btn ghost sm" data-view-sale="${s.id}">👁</button><button class="btn ghost sm" data-edit-sale="${s.id}">✏️</button><button class="btn ghost sm" data-del-sale="${s.id}">🗑</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('🧾','No sales recorded yet.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Invoice</th><th>Customer</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th>Status</th><th></th></tr></thead><tbody>${rows.map(s=>{const st=Views.saleStatus(s);const hasDel=DB.all('deliveries').some(d=>d.saleId===s.id);const hasRet=DB.all('salesReturns').some(r=>r.saleId===s.id);return `<tr><td class="nowrap">${U.date(s.date)}${hasDel?' ðŸšš':''}${hasRet?' â†©':''}</td><td class="nowrap"><a href="#/sale/${s.id}">${U.esc(s.number||'â€”')}</a></td><td>${U.esc(Views.customerName(s.customerId))}</td><td class="num">${U.money0(s.total)}</td><td class="num">${U.money0(s.paid)}</td><td class="num ${(s.total-s.paid)>0?'neg':''}">${U.money0(s.total-s.paid)}</td><td>${Views.badge(st)}</td><td class="right nowrap"><button class="btn ghost sm" data-view-sale="${s.id}">ðŸ‘</button><button class="btn ghost sm" data-edit-sale="${s.id}">âœï¸</button><button class="btn ghost sm" data-del-sale="${s.id}">ðŸ—‘</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ§¾','No sales recorded yet.')}</div>`}
   `;
 };
 
@@ -1599,14 +1615,14 @@ Views.saleForm=(existing)=>{
   const renderItems=(container)=>{
     container.innerHTML=items.map((it,idx)=>`
       <div class="line-item" data-idx="${idx}">
-        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">✕</button>`:''}
+        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">âœ•</button>`:''}
         <div class="li-grid">
           <label style="grid-column:1/-1">Product *
-            <select data-f="productId" data-idx="${idx}"><option value="">Select product</option>${products.map(p=>`<option value="${p.id}"${it.productId===p.id?' selected':''}>${U.esc(Views.productLabel(p))}${p.size?' · '+U.esc(p.size):''}</option>`).join('')}</select>
+            <select data-f="productId" data-idx="${idx}"><option value="">Select product</option>${products.map(p=>`<option value="${p.id}"${it.productId===p.id?' selected':''}>${U.esc(Views.productLabel(p))}${p.size?' Â· '+U.esc(p.size):''}</option>`).join('')}</select>
           </label>
           <label>Qty *<input type="number" min="0.01" step="0.01" data-f="qty" data-idx="${idx}" value="${it.qty??1}"></label>
-          <label>Rate (₹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
-          <label>Discount (₹)<input type="number" min="0" step="0.01" data-f="discount" data-idx="${idx}" value="${it.discount??0}"></label>
+          <label>Rate (â‚¹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
+          <label>Discount (â‚¹)<input type="number" min="0" step="0.01" data-f="discount" data-idx="${idx}" value="${it.discount??0}"></label>
           <label>Line Total<input type="text" readonly value="${U.money(Views.lineTotal(it))}"></label>
         </div>
         ${(()=>{const p=DB.find('products',it.productId);const st=p?DB.productStock(p.id):null;return st!==null?`<div class="tiny muted" style="margin-top:.35rem">Available: ${U.num(st,0)} ${U.esc(p.unit||'')}</div>`:''})()}
@@ -1634,13 +1650,13 @@ Views.saleForm=(existing)=>{
     fields:[
       {name:'number',label:'Sale / Invoice ID',type:'text',required:true,col:2},
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
-      {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',options:customers.map(c=>({value:c.id,label:c.name+(c.shop?' — '+c.shop:'')}))},
+      {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',options:customers.map(c=>({value:c.id,label:c.name+(c.shop?' â€” '+c.shop:'')}))},
       {name:'method',label:'Payment Method',type:'select',required:true,value:'Cash',options:['Cash','UPI','Bank Transfer','Credit']},
-      {name:'paid',label:'Amount Paid (₹)',type:'number',min:0,step:'0.01',value:0},
-      {name:'subtotal',label:'Subtotal',type:'text',readonly:true,value:'₹0.00'},
-      {name:'taxAmount',label:'Tax',type:'text',readonly:true,value:'₹0.00'},
-      {name:'total',label:'Total Amount',type:'text',readonly:true,value:'₹0.00'},
-      {name:'pending',label:'Pending',type:'text',readonly:true,value:'₹0.00'},
+      {name:'paid',label:'Amount Paid (â‚¹)',type:'number',min:0,step:'0.01',value:0},
+      {name:'subtotal',label:'Subtotal',type:'text',readonly:true,value:'â‚¹0.00'},
+      {name:'taxAmount',label:'Tax',type:'text',readonly:true,value:'â‚¹0.00'},
+      {name:'total',label:'Total Amount',type:'text',readonly:true,value:'â‚¹0.00'},
+      {name:'pending',label:'Pending',type:'text',readonly:true,value:'â‚¹0.00'},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
     values:existing?{number:existing.number,date:existing.date,customerId:existing.customerId,method:existing.method,paid:existing.paid,notes:existing.notes}:{number:DB.nextNumber('INV',DB.data.settings.invoicePrefix||'INV'),date:U.today(),method:'Cash',paid:0},
@@ -1694,7 +1710,7 @@ Views.saleForm=(existing)=>{
         const available=DB.productStock(it.productId)+restore;
         if(Number(it.qty)>available+0.001)stockErrors.push(`${Views.productLabel(p)}: only ${U.num(available,0)} ${p?.unit||''} in stock`);
       }
-      if(stockErrors.length)return 'Not enough stock — '+stockErrors.join('; ');
+      if(stockErrors.length)return 'Not enough stock â€” '+stockErrors.join('; ');
 
       const itemsWithCost=valid.map(i=>{const p=DB.find('products',i.productId);return {productId:i.productId,qty:Number(i.qty),price:Number(i.price),discount:Number(i.discount)||0,unitCost:Number(p?.costPrice)||0}});
 
@@ -1704,11 +1720,11 @@ Views.saleForm=(existing)=>{
         DB.update('sales',existing.id,rec);
         DB.data.invTxns=DB.data.invTxns.filter(t=>t.refId!==existing.id);
         itemsWithCost.forEach(i=>DB.addInvTxn({date:v.date,productId:i.productId,type:'sale',qty:i.qty,unitCost:i.unitCost,refId:existing.id,reason:'Sale '+v.number}));
-        DB.save();U.toast('✓ Sale updated','ok');
+        DB.save();U.toast('âœ“ Sale updated','ok');
       }else{
         const saved=DB.insert('sales',rec);
         itemsWithCost.forEach(i=>DB.addInvTxn({date:v.date,productId:i.productId,type:'sale',qty:i.qty,unitCost:i.unitCost,refId:saved.id,reason:'Sale '+v.number}));
-        U.toast('✓ Sale saved successfully','ok');
+        U.toast('âœ“ Sale saved successfully','ok');
       }
       return true;
     }
@@ -1737,18 +1753,18 @@ Views.invoiceHTML=(s)=>{
     st.bankAccount?`A/c: <b>${U.esc(st.bankAccount)}</b>`:'',
     st.bankIfsc?`IFSC: <b>${U.esc(st.bankIfsc)}</b>`:'',
     st.upiId?`UPI: <b>${U.esc(st.upiId)}</b>`:''
-  ].filter(Boolean).join(' · ');
+  ].filter(Boolean).join(' Â· ');
 
   return `
   <div class="card invoice" id="invoiceBox">
     <div class="inv-head">
       <div style="min-width:0">
-        ${st.logo?`<img class="logo" src="${st.logo}" alt="Logo">`:''}
+        <img class="logo" src="${st.logo || BRAND_LOGO}" alt="Logo">
         <h2>${U.esc(st.businessName||'MY DETERGENT BUSINESS')}</h2>
         <div class="inv-addr">
           ${st.address?U.esc(st.address)+'<br>':''}
-          ${st.phone?'📞 '+U.esc(st.phone)+'<br>':''}
-          ${st.email?'✉️ '+U.esc(st.email)+'<br>':''}
+          ${st.phone?'ðŸ“ž '+U.esc(st.phone)+'<br>':''}
+          ${st.email?'âœ‰ï¸ '+U.esc(st.email)+'<br>':''}
           ${st.gst?'GSTIN: <b>'+U.esc(st.gst)+'</b>':''}
         </div>
       </div>
@@ -1757,7 +1773,7 @@ Views.invoiceHTML=(s)=>{
         <div class="inv-meta">
           Invoice No: <b>${U.esc(s.number||'')}</b><br>
           Date: <b>${U.date(s.date)}</b><br>
-          Payment: <b>${U.esc(s.method||'—')}</b>
+          Payment: <b>${U.esc(s.method||'â€”')}</b>
         </div>
         <div style="text-align:right;margin-top:.4rem">
           <span class="inv-stamp" style="color:${stampColor};border-color:${stampColor}">${status.toUpperCase()}</span>
@@ -1773,7 +1789,7 @@ Views.invoiceHTML=(s)=>{
           ${c.shop?U.esc(c.shop)+'<br>':''}
           ${c.address?U.esc(c.address)+'<br>':''}
           ${c.city?U.esc(c.city)+'<br>':''}
-          ${c.phone?'📞 '+U.esc(c.phone)+'<br>':''}
+          ${c.phone?'ðŸ“ž '+U.esc(c.phone)+'<br>':''}
           ${c.gst?'GSTIN: '+U.esc(c.gst):''}
         </div>
       </div>
@@ -1814,7 +1830,7 @@ Views.invoiceHTML=(s)=>{
       <div>
         <div class="inv-totals">
           <div><span>Subtotal</span><span>${U.money(s.subtotal)}</span></div>
-          <div><span>Discount</span><span>− ${U.money(s.discount)}</span></div>
+          <div><span>Discount</span><span>âˆ’ ${U.money(s.discount)}</span></div>
           ${taxAmount?`<div><span>Tax (${tax}%)</span><span>+ ${U.money(taxAmount)}</span></div>`:''}
           <div class="grand"><span>Grand Total</span><span>${U.money(s.total)}</span></div>
           <div><span>Amount Paid</span><span>${U.money(s.paid)}</span></div>
@@ -1835,30 +1851,30 @@ Views.invoiceHTML=(s)=>{
 };
 
 Views.saleDetail=(id)=>{
-  const s=DB.find('sales',id);if(!s)return `<div class="card">${Views.empty('❓','Sale not found.')}</div>`;
+  const s=DB.find('sales',id);if(!s)return `<div class="card">${Views.empty('â“','Sale not found.')}</div>`;
   const deliveries=DB.all('deliveries').filter(d=>d.saleId===id);
   const returns=DB.all('salesReturns').filter(r=>r.saleId===id);
 
   return `
   <div class="page-head no-print">
-    <div><h1>Invoice ${U.esc(s.number||'')}</h1><p>${U.date(s.date)} · ${U.esc(Views.customerName(s.customerId))}</p></div>
+    <div><h1>Invoice ${U.esc(s.number||'')}</h1><p>${U.date(s.date)} Â· ${U.esc(Views.customerName(s.customerId))}</p></div>
     <div class="row wrap">
-      <button class="btn sm" onclick="history.back()">← Back</button>
-      <button class="btn sm primary" id="printInvoice">🖨 Print / PDF</button>
-      <button class="btn sm" id="shareInvoice">📤 Share</button>
-      <button class="btn sm" id="waInvoice">💬 WhatsApp</button>
+      <button class="btn sm" onclick="history.back()">â† Back</button>
+      <button class="btn sm primary" id="printInvoice">ðŸ–¨ Print / PDF</button>
+      <button class="btn sm" id="shareInvoice">ðŸ“¤ Share</button>
+      <button class="btn sm" id="waInvoice">ðŸ’¬ WhatsApp</button>
     </div>
   </div>
   ${Views.invoiceHTML(s)}
-  ${deliveries.length?`<div class="card no-print"><div class="card-head"><h3>Deliveries</h3></div>${deliveries.map(d=>`<div class="kv"><span>${U.date(d.date)} · ${U.esc(d.person||'—')}</span><span>${Views.badge(d.status)}</span></div>`).join('')}</div>`:''}
-  ${returns.length?`<div class="card no-print"><div class="card-head"><h3>Returns</h3></div>${returns.map(r=>`<div class="kv"><span>${U.date(r.date)} · ${U.esc(r.reason||'—')}</span><span class="neg">− ${U.money0(r.total)}</span></div>`).join('')}</div>`:''}
+  ${deliveries.length?`<div class="card no-print"><div class="card-head"><h3>Deliveries</h3></div>${deliveries.map(d=>`<div class="kv"><span>${U.date(d.date)} Â· ${U.esc(d.person||'â€”')}</span><span>${Views.badge(d.status)}</span></div>`).join('')}</div>`:''}
+  ${returns.length?`<div class="card no-print"><div class="card-head"><h3>Returns</h3></div>${returns.map(r=>`<div class="kv"><span>${U.date(r.date)} Â· ${U.esc(r.reason||'â€”')}</span><span class="neg">âˆ’ ${U.money0(r.total)}</span></div>`).join('')}</div>`:''}
   <div class="card no-print"><div class="row wrap">
-    <button class="btn" data-edit-sale="${s.id}">✏️ Edit</button>
-    <button class="btn" id="duplicateSale">📄 Duplicate</button>
-    <button class="btn" data-record-payment="${s.customerId}">💰 Record Payment</button>
-    <button class="btn" data-add-delivery="${s.id}">🚚 Add Delivery</button>
-    <button class="btn" data-add-return-sale="${s.id}">↩ Record Return</button>
-    <button class="btn danger" data-del-sale="${s.id}">🗑 Delete</button>
+    <button class="btn" data-edit-sale="${s.id}">âœï¸ Edit</button>
+    <button class="btn" id="duplicateSale">ðŸ“„ Duplicate</button>
+    <button class="btn" data-record-payment="${s.customerId}">ðŸ’° Record Payment</button>
+    <button class="btn" data-add-delivery="${s.id}">ðŸšš Add Delivery</button>
+    <button class="btn" data-add-return-sale="${s.id}">â†© Record Return</button>
+    <button class="btn danger" data-del-sale="${s.id}">ðŸ—‘ Delete</button>
   </div></div>`;
 };
 
@@ -1884,18 +1900,18 @@ Views.expenses=(state)=>{
     ${Views.statCard('c-qty','Today',U.money0(today))}
     ${Views.statCard('c-pend','This Month',U.money0(month))}
   </div>
-  ${catData.length?`<div class="card"><div class="card-head"><h3>Expenses by Category</h3></div><div class="chart-box"><canvas id="expCatChart"></canvas></div><div class="legend">${catData.slice(0,6).map(([c,v],i)=>`<span><i style="background:${Chart.PALETTE[i%Chart.PALETTE.length]}"></i>${U.esc(c)} · ${U.money0(v)}</span>`).join('')}</div></div>`:''}
+  ${catData.length?`<div class="card"><div class="card-head"><h3>Expenses by Category</h3></div><div class="chart-box"><canvas id="expCatChart"></canvas></div><div class="legend">${catData.slice(0,6).map(([c,v],i)=>`<span><i style="background:${Chart.PALETTE[i%Chart.PALETTE.length]}"></i>${U.esc(c)} Â· ${U.money0(v)}</span>`).join('')}</div></div>`:''}
   <div class="card tight">
-    <input class="search-input" id="expSearch" placeholder="Search description or category…" value="${U.esc(f.q)}">
+    <input class="search-input" id="expSearch" placeholder="Search description or categoryâ€¦" value="${U.esc(f.q)}">
     <div class="filters" style="margin-top:.6rem">
       <label>From<input type="date" id="expFrom" value="${f.from}"></label>
       <label>To<input type="date" id="expTo" value="${f.to}"></label>
       <label>Category<select id="expCat"><option value="">All categories</option>${Views.expenseCategories.map(c=>`<option value="${c}"${f.category===c?' selected':''}>${c}</option>`).join('')}</select></label>
       <label>&nbsp;<button class="btn sm" id="expClear">Clear</button></label>
     </div>
-    <div class="row" style="margin-top:.3rem"><button class="btn sm" id="expExport">⬇ Export CSV</button></div>
+    <div class="row" style="margin-top:.3rem"><button class="btn sm" id="expExport">â¬‡ Export CSV</button></div>
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Method</th><th class="num">Amount</th><th></th></tr></thead><tbody>${rows.map(e=>`<tr><td class="nowrap">${U.date(e.date)}</td><td>${U.esc(e.category)}</td><td>${U.esc(e.description||'—')}</td><td>${U.esc(e.method||'—')}</td><td class="num neg">${U.money0(e.amount)}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-expense="${e.id}">✏️</button><button class="btn ghost sm" data-del-expense="${e.id}">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('💸','No expenses recorded yet.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Method</th><th class="num">Amount</th><th></th></tr></thead><tbody>${rows.map(e=>`<tr><td class="nowrap">${U.date(e.date)}</td><td>${U.esc(e.category)}</td><td>${U.esc(e.description||'â€”')}</td><td>${U.esc(e.method||'â€”')}</td><td class="num neg">${U.money0(e.amount)}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-expense="${e.id}">âœï¸</button><button class="btn ghost sm" data-del-expense="${e.id}">ðŸ—‘</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ’¸','No expenses recorded yet.')}</div>`}
   `;
 };
 
@@ -1913,12 +1929,12 @@ Views.expenseForm=(existing)=>UI.form({
     {name:'date',label:'Date',type:'date',required:true,value:U.today()},
     {name:'category',label:'Category',type:'select',required:true,options:Views.expenseCategories},
     {name:'description',label:'Description',type:'text',required:true,col:2},
-    {name:'amount',label:'Amount (₹)',type:'number',required:true,min:0.01,step:'0.01'},
+    {name:'amount',label:'Amount (â‚¹)',type:'number',required:true,min:0.01,step:'0.01'},
     {name:'method',label:'Payment Method',type:'select',required:true,value:'Cash',options:['Cash','UPI','Bank Transfer','Credit']},
     {name:'notes',label:'Notes',type:'textarea',col:2}
   ],
   values:existing||{},
-  onSubmit:(v)=>{if(existing){DB.update('expenses',existing.id,v);U.toast('✓ Expense updated','ok')}else{DB.insert('expenses',v);U.toast('✓ Expense saved','ok')}return true}
+  onSubmit:(v)=>{if(existing){DB.update('expenses',existing.id,v);U.toast('âœ“ Expense updated','ok')}else{DB.insert('expenses',v);U.toast('âœ“ Expense saved','ok')}return true}
 });
 
 /* ---------- PURCHASES ---------- */
@@ -1935,10 +1951,10 @@ Views.purchases=()=>{
     ${Views.statCard('c-pend','Pending',U.money0(pending))}
   </div>
   <div class="row wrap" style="margin-bottom:1rem">
-    <button class="btn sm" data-add-purchase-return>↩ Record Purchase Return</button>
-    <button class="btn sm" id="purExport">⬇ Export CSV</button>
+    <button class="btn sm" data-add-purchase-return>â†© Record Purchase Return</button>
+    <button class="btn sm" id="purExport">â¬‡ Export CSV</button>
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>ID</th><th>Supplier</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th></th></tr></thead><tbody>${rows.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td class="nowrap">${U.esc(p.number||'—')}</td><td>${U.esc(Views.supplierName(p.supplierId))}</td><td class="num">${U.money0(p.total)}</td><td class="num">${U.money0(p.paid)}</td><td class="num ${(p.total-p.paid)>0?'neg':''}">${U.money0(p.total-p.paid)}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-purchase="${p.id}">✏️</button><button class="btn ghost sm" data-del-purchase="${p.id}">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('🚚','No purchases recorded yet.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>ID</th><th>Supplier</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th></th></tr></thead><tbody>${rows.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td class="nowrap">${U.esc(p.number||'â€”')}</td><td>${U.esc(Views.supplierName(p.supplierId))}</td><td class="num">${U.money0(p.total)}</td><td class="num">${U.money0(p.paid)}</td><td class="num ${(p.total-p.paid)>0?'neg':''}">${U.money0(p.total-p.paid)}</td><td class="right nowrap"><button class="btn ghost sm" data-edit-purchase="${p.id}">âœï¸</button><button class="btn ghost sm" data-del-purchase="${p.id}">ðŸ—‘</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸšš','No purchases recorded yet.')}</div>`}
   `;
 };
 
@@ -1953,11 +1969,11 @@ Views.purchaseForm=(existing)=>{
   const renderItems=(container)=>{
     container.innerHTML=items.map((it,idx)=>`
       <div class="line-item" data-idx="${idx}">
-        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">✕</button>`:''}
+        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">âœ•</button>`:''}
         <div class="li-grid">
           <label style="grid-column:1/-1">Material *<select data-f="materialId" data-idx="${idx}"><option value="">Select material</option>${mats.map(m=>`<option value="${m.id}"${it.materialId===m.id?' selected':''}>${U.esc(m.name)} (${U.esc(m.unit||'')})</option>`).join('')}</select></label>
           <label>Quantity *<input type="number" min="0.0001" step="0.0001" data-f="qty" data-idx="${idx}" value="${it.qty??1}"></label>
-          <label>Unit Price (₹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
+          <label>Unit Price (â‚¹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
           <label style="grid-column:1/-1">Line Total<input type="text" readonly value="${U.money((Number(it.qty)||0)*(Number(it.price)||0))}"></label>
         </div>
       </div>`).join('')+
@@ -1980,9 +1996,9 @@ Views.purchaseForm=(existing)=>{
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
       {name:'supplierId',label:'Supplier',type:'select',required:true,placeholder:'Select supplier',options:suppliers.map(s=>({value:s.id,label:s.name}))},
       {name:'method',label:'Payment Method',type:'select',required:true,value:'Cash',options:['Cash','UPI','Bank Transfer','Credit']},
-      {name:'paid',label:'Amount Paid (₹)',type:'number',min:0,step:'0.01',value:0},
-      {name:'total',label:'Total Amount',type:'text',readonly:true,value:'₹0.00'},
-      {name:'pending',label:'Pending',type:'text',readonly:true,value:'₹0.00'},
+      {name:'paid',label:'Amount Paid (â‚¹)',type:'number',min:0,step:'0.01',value:0},
+      {name:'total',label:'Total Amount',type:'text',readonly:true,value:'â‚¹0.00'},
+      {name:'pending',label:'Pending',type:'text',readonly:true,value:'â‚¹0.00'},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
     values:existing?{number:existing.number,date:existing.date,supplierId:existing.supplierId,method:existing.method,paid:existing.paid,notes:existing.notes}:{number:DB.nextNumber('PUR','PUR'),date:U.today(),method:'Cash',paid:0},
@@ -2018,11 +2034,11 @@ Views.purchaseForm=(existing)=>{
         DB.update('purchases',existing.id,rec);
         DB.data.rawTxns=DB.data.rawTxns.filter(t=>t.refId!==existing.id);
         rec.items.forEach(i=>DB.addRawTxn({date:v.date,materialId:i.materialId,type:'purchase',qty:i.qty,unitCost:i.price,refId:existing.id,notes:'Purchase '+v.number}));
-        DB.save();U.toast('✓ Purchase updated','ok')
+        DB.save();U.toast('âœ“ Purchase updated','ok')
       }else{
         const saved=DB.insert('purchases',rec);
         rec.items.forEach(i=>DB.addRawTxn({date:v.date,materialId:i.materialId,type:'purchase',qty:i.qty,unitCost:i.price,refId:saved.id,notes:'Purchase '+v.number}));
-        U.toast('✓ Purchase saved','ok')
+        U.toast('âœ“ Purchase saved','ok')
       }
       return true;
     }
@@ -2048,7 +2064,7 @@ Views.salesReturns=()=>{
     ${Views.statCard('c-pend','Total Returns',U.money0(total))}
     ${Views.statCard('c-stock','Items Returned',U.num(U.sum(rows,r=>U.sum(r.items||[],i=>i.qty)),0),'units')}
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Original Sale</th><th>Items</th><th class="num">Total</th><th>Refund</th><th></th></tr></thead><tbody>${rows.map(r=>{const sale=r.saleId?DB.find('sales',r.saleId):null;return `<tr><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.customerName(r.customerId))}</td><td class="tiny">${sale?U.esc(sale.number):'—'}</td><td class="tiny">${(r.items||[]).map(i=>`${Views.productName(i.productId)} ×${i.qty}`).join(', ')}</td><td class="num neg">− ${U.money0(r.total)}</td><td>${U.esc(r.refundMethod||'—')}</td><td class="right"><button class="btn ghost sm" data-del-return-sale="${r.id}">🗑</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('↩️','No sales returns recorded.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Original Sale</th><th>Items</th><th class="num">Total</th><th>Refund</th><th></th></tr></thead><tbody>${rows.map(r=>{const sale=r.saleId?DB.find('sales',r.saleId):null;return `<tr><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.customerName(r.customerId))}</td><td class="tiny">${sale?U.esc(sale.number):'â€”'}</td><td class="tiny">${(r.items||[]).map(i=>`${Views.productName(i.productId)} Ã—${i.qty}`).join(', ')}</td><td class="num neg">âˆ’ ${U.money0(r.total)}</td><td>${U.esc(r.refundMethod||'â€”')}</td><td class="right"><button class="btn ghost sm" data-del-return-sale="${r.id}">ðŸ—‘</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('â†©ï¸','No sales returns recorded.')}</div>`}
   `;
 };
 
@@ -2062,11 +2078,11 @@ Views.salesReturnForm=(presetSaleId)=>{
   const renderItems=(container)=>{
     container.innerHTML=items.map((it,idx)=>`
       <div class="line-item" data-idx="${idx}">
-        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">✕</button>`:''}
+        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">âœ•</button>`:''}
         <div class="li-grid">
           <label style="grid-column:1/-1">Product *<select data-f="productId" data-idx="${idx}"><option value="">Select product</option>${products.map(p=>`<option value="${p.id}"${it.productId===p.id?' selected':''}>${U.esc(Views.productLabel(p))}</option>`).join('')}</select></label>
           <label>Qty *<input type="number" min="0.01" step="0.01" data-f="qty" data-idx="${idx}" value="${it.qty??1}"></label>
-          <label>Unit Price (₹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
+          <label>Unit Price (â‚¹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
         </div>
       </div>`).join('')+
       `<button type="button" class="btn sm outline" data-add-line>+ Add product</button>`;
@@ -2084,10 +2100,10 @@ Views.salesReturnForm=(presetSaleId)=>{
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
       {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',options:customers.map(c=>({value:c.id,label:c.name}))},
-      {name:'saleId',label:'Original Sale (optional)',type:'select',placeholder:'— None —',options:DB.all('sales').slice(0,50).map(s=>({value:s.id,label:`${s.number} · ${U.date(s.date)} · ${U.money0(s.total)}`}))},
+      {name:'saleId',label:'Original Sale (optional)',type:'select',placeholder:'â€” None â€”',options:DB.all('sales').slice(0,50).map(s=>({value:s.id,label:`${s.number} Â· ${U.date(s.date)} Â· ${U.money0(s.total)}`}))},
       {name:'refundMethod',label:'Refund Method',type:'select',required:true,value:'Adjust Balance',options:['Adjust Balance','Cash','UPI','Bank Transfer']},
       {name:'reason',label:'Reason',type:'text',required:true,col:2,placeholder:'e.g. Damaged goods, wrong item'},
-      {name:'total',label:'Total',type:'text',readonly:true,value:'₹0.00'}
+      {name:'total',label:'Total',type:'text',readonly:true,value:'â‚¹0.00'}
     ],
     values:{saleId:presetSaleId||''},
     onRender:(sheet,form)=>{
@@ -2117,7 +2133,7 @@ Views.salesReturnForm=(presetSaleId)=>{
       const rec={date:v.date,customerId:v.customerId,saleId:v.saleId||null,items:valid.map(i=>({productId:i.productId,qty:Number(i.qty),price:Number(i.price)})),total,refundMethod:v.refundMethod,reason:v.reason};
       const saved=DB.insert('salesReturns',rec);
       valid.forEach(i=>DB.addInvTxn({date:v.date,productId:i.productId,type:'return',qty:Number(i.qty),unitCost:0,refId:saved.id,reason:'Return '+v.reason}));
-      U.toast('✓ Return recorded — stock increased','ok');
+      U.toast('âœ“ Return recorded â€” stock increased','ok');
       return true;
     }
   });
@@ -2133,7 +2149,7 @@ Views.purchaseReturns=()=>{
     ${Views.statCard('c-exp','Total Returns',U.money0(total))}
     ${Views.statCard('c-pend','Items Returned',U.num(U.sum(rows,r=>U.sum(r.items||[],i=>i.qty)),2),'units')}
   </div>
-  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Supplier</th><th>Original Purchase</th><th>Items</th><th class="num">Total</th><th></th></tr></thead><tbody>${rows.map(r=>{const p=r.purchaseId?DB.find('purchases',r.purchaseId):null;return `<tr><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.supplierName(r.supplierId))}</td><td class="tiny">${p?U.esc(p.number):'—'}</td><td class="tiny">${(r.items||[]).map(i=>`${Views.materialName(i.materialId)} ×${i.qty}`).join(', ')}</td><td class="num neg">− ${U.money0(r.total)}</td><td class="right"><button class="btn ghost sm" data-del-purchase-return="${r.id}">🗑</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('↩️','No purchase returns recorded.')}</div>`}
+  ${rows.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Supplier</th><th>Original Purchase</th><th>Items</th><th class="num">Total</th><th></th></tr></thead><tbody>${rows.map(r=>{const p=r.purchaseId?DB.find('purchases',r.purchaseId):null;return `<tr><td class="nowrap">${U.date(r.date)}</td><td>${U.esc(Views.supplierName(r.supplierId))}</td><td class="tiny">${p?U.esc(p.number):'â€”'}</td><td class="tiny">${(r.items||[]).map(i=>`${Views.materialName(i.materialId)} Ã—${i.qty}`).join(', ')}</td><td class="num neg">âˆ’ ${U.money0(r.total)}</td><td class="right"><button class="btn ghost sm" data-del-purchase-return="${r.id}">ðŸ—‘</button></td></tr>`}).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('â†©ï¸','No purchase returns recorded.')}</div>`}
   `;
 };
 
@@ -2146,11 +2162,11 @@ Views.purchaseReturnForm=()=>{
   const renderItems=(container)=>{
     container.innerHTML=items.map((it,idx)=>`
       <div class="line-item" data-idx="${idx}">
-        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">✕</button>`:''}
+        ${items.length>1?`<button type="button" class="remove" data-rm="${idx}">âœ•</button>`:''}
         <div class="li-grid">
           <label style="grid-column:1/-1">Material *<select data-f="materialId" data-idx="${idx}"><option value="">Select material</option>${mats.map(m=>`<option value="${m.id}"${it.materialId===m.id?' selected':''}>${U.esc(m.name)} (${U.esc(m.unit||'')})</option>`).join('')}</select></label>
           <label>Qty *<input type="number" min="0.0001" step="0.0001" data-f="qty" data-idx="${idx}" value="${it.qty??1}"></label>
-          <label>Unit Price (₹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
+          <label>Unit Price (â‚¹) *<input type="number" min="0" step="0.01" data-f="price" data-idx="${idx}" value="${it.price??''}"></label>
         </div>
       </div>`).join('')+
       `<button type="button" class="btn sm outline" data-add-line>+ Add material</button>`;
@@ -2163,7 +2179,7 @@ Views.purchaseReturnForm=()=>{
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
       {name:'supplierId',label:'Supplier',type:'select',required:true,placeholder:'Select supplier',options:suppliers.map(s=>({value:s.id,label:s.name}))},
-      {name:'purchaseId',label:'Original Purchase (optional)',type:'select',placeholder:'— None —',options:DB.all('purchases').slice(0,50).map(p=>({value:p.id,label:`${p.number} · ${U.date(p.date)} · ${U.money0(p.total)}`}))},
+      {name:'purchaseId',label:'Original Purchase (optional)',type:'select',placeholder:'â€” None â€”',options:DB.all('purchases').slice(0,50).map(p=>({value:p.id,label:`${p.number} Â· ${U.date(p.date)} Â· ${U.money0(p.total)}`}))},
       {name:'reason',label:'Reason',type:'text',required:true,col:2}
     ],
     onRender:(sheet,form)=>{
@@ -2184,7 +2200,7 @@ Views.purchaseReturnForm=()=>{
       const rec={date:v.date,supplierId:v.supplierId,purchaseId:v.purchaseId||null,items:valid.map(i=>({materialId:i.materialId,qty:Number(i.qty),price:Number(i.price)})),total,reason:v.reason};
       const saved=DB.insert('purchaseReturns',rec);
       valid.forEach(i=>DB.addRawTxn({date:v.date,materialId:i.materialId,type:'return',qty:Number(i.qty),unitCost:Number(i.price),refId:saved.id,notes:'Return '+v.reason}));
-      U.toast('✓ Purchase return recorded','ok');
+      U.toast('âœ“ Purchase return recorded','ok');
       return true;
     }
   });
@@ -2213,7 +2229,7 @@ Views.deliveries=(state)=>{
     <label>To<input type="date" id="delTo" value="${f.to}"></label>
     <label>&nbsp;<button class="btn sm" id="delClear">Clear</button></label>
   </div></div>
-  ${rows.length?`<div class="list">${rows.map(d=>{const c=DB.find('customers',d.customerId)||{};return `<div class="list-item" data-open-delivery="${d.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(c.name||'—')}</div><div class="li-sub">${U.date(d.date)} · ${U.esc(d.person||'—')}${d.vehicle?' · '+U.esc(d.vehicle):''}</div></div><div class="li-amt">${Views.badge(d.status)}</div></div><div class="li-meta"><span>📍 ${U.esc(d.address||'—')}</span><span>Collect: <b>${U.money0(d.amountToCollect||0)}</b></span></div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('🚚','No deliveries recorded yet.')}</div>`}
+  ${rows.length?`<div class="list">${rows.map(d=>{const c=DB.find('customers',d.customerId)||{};return `<div class="list-item" data-open-delivery="${d.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(c.name||'â€”')}</div><div class="li-sub">${U.date(d.date)} Â· ${U.esc(d.person||'â€”')}${d.vehicle?' Â· '+U.esc(d.vehicle):''}</div></div><div class="li-amt">${Views.badge(d.status)}</div></div><div class="li-meta"><span>ðŸ“ ${U.esc(d.address||'â€”')}</span><span>Collect: <b>${U.money0(d.amountToCollect||0)}</b></span></div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('ðŸšš','No deliveries recorded yet.')}</div>`}
   `;
 };
 
@@ -2230,42 +2246,42 @@ Views.deliveryForm=(presetSaleId,existing)=>{
     fields:[
       {name:'date',label:'Delivery Date',type:'date',required:true,value:U.today()},
       {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',options:customers.map(x=>({value:x.id,label:x.name}))},
-      {name:'saleId',label:'Linked Sale (optional)',type:'select',placeholder:'— None —',options:sales.map(s=>({value:s.id,label:`${s.number} · ${U.date(s.date)} · ${U.money0(s.total)}`}))},
+      {name:'saleId',label:'Linked Sale (optional)',type:'select',placeholder:'â€” None â€”',options:sales.map(s=>({value:s.id,label:`${s.number} Â· ${U.date(s.date)} Â· ${U.money0(s.total)}`}))},
       {name:'person',label:'Delivery Person',type:'text',required:true},
       {name:'vehicle',label:'Vehicle',type:'text',placeholder:'e.g. MH-12-AB-1234'},
       {name:'address',label:'Delivery Address',type:'textarea',required:true,col:2,value:c?[c.address,c.city].filter(Boolean).join(', '):''},
-      {name:'amountToCollect',label:'Amount to Collect (₹)',type:'number',min:0,step:'0.01',value:sale?sale.pending:0},
-      {name:'amountCollected',label:'Amount Collected (₹)',type:'number',min:0,step:'0.01',value:0},
+      {name:'amountToCollect',label:'Amount to Collect (â‚¹)',type:'number',min:0,step:'0.01',value:sale?sale.pending:0},
+      {name:'amountCollected',label:'Amount Collected (â‚¹)',type:'number',min:0,step:'0.01',value:0},
       {name:'status',label:'Status',type:'select',required:true,value:'Pending',options:['Pending','In Transit','Delivered','Returned']},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
     values:existing||{customerId:sale?.customerId||'',saleId:presetSaleId||''},
     onSubmit:(v)=>{
-      if(existing){DB.update('deliveries',existing.id,v);U.toast('✓ Delivery updated','ok')}
-      else{DB.insert('deliveries',v);U.toast('✓ Delivery saved','ok')}
+      if(existing){DB.update('deliveries',existing.id,v);U.toast('âœ“ Delivery updated','ok')}
+      else{DB.insert('deliveries',v);U.toast('âœ“ Delivery saved','ok')}
       return true;
     }
   });
 };
 
 Views.deliveryDetail=(id)=>{
-  const d=DB.find('deliveries',id);if(!d)return `<div class="card">${Views.empty('❓','Delivery not found.')}</div>`;
+  const d=DB.find('deliveries',id);if(!d)return `<div class="card">${Views.empty('â“','Delivery not found.')}</div>`;
   const c=DB.find('customers',d.customerId)||{};
   return `
-  <div class="page-head"><div><h1>Delivery</h1><p>${U.date(d.date)}</p></div><button class="btn sm" onclick="history.back()">← Back</button></div>
+  <div class="page-head"><div><h1>Delivery</h1><p>${U.date(d.date)}</p></div><button class="btn sm" onclick="history.back()">â† Back</button></div>
   <div class="card">
-    <div class="profile-head"><div class="avatar">${U.esc(U.initials(c.name||'?'))}</div><div><div style="font-weight:750">${U.esc(c.name||'—')}</div><div class="tiny muted">${U.esc(c.phone||'')}</div></div></div>
+    <div class="profile-head"><div class="avatar">${U.esc(U.initials(c.name||'?'))}</div><div><div style="font-weight:750">${U.esc(c.name||'â€”')}</div><div class="tiny muted">${U.esc(c.phone||'')}</div></div></div>
     <div class="kv"><span>Status</span><span>${Views.badge(d.status)}</span></div>
-    <div class="kv"><span>Delivery Person</span><span>${U.esc(d.person||'—')}</span></div>
-    <div class="kv"><span>Vehicle</span><span>${U.esc(d.vehicle||'—')}</span></div>
-    <div class="kv"><span>Address</span><span>${U.esc(d.address||'—')}</span></div>
+    <div class="kv"><span>Delivery Person</span><span>${U.esc(d.person||'â€”')}</span></div>
+    <div class="kv"><span>Vehicle</span><span>${U.esc(d.vehicle||'â€”')}</span></div>
+    <div class="kv"><span>Address</span><span>${U.esc(d.address||'â€”')}</span></div>
     <div class="kv"><span>To Collect</span><span>${U.money(d.amountToCollect||0)}</span></div>
     <div class="kv"><span>Collected</span><span class="pos">${U.money(d.amountCollected||0)}</span></div>
     ${d.notes?`<div class="kv"><span>Notes</span><span>${U.esc(d.notes)}</span></div>`:''}
   </div>
   <div class="card"><div class="row wrap">
-    <button class="btn" data-edit-delivery="${d.id}">✏️ Edit</button>
-    <button class="btn danger" data-del-delivery="${d.id}">🗑 Delete</button>
+    <button class="btn" data-edit-delivery="${d.id}">âœï¸ Edit</button>
+    <button class="btn danger" data-del-delivery="${d.id}">ðŸ—‘ Delete</button>
   </div></div>`;
 };
 
@@ -2276,8 +2292,8 @@ Views.customers=(state)=>{
   if(q)rows=rows.filter(c=>(c.name||'').toLowerCase().includes(q)||(c.shop||'').toLowerCase().includes(q)||(c.phone||'').includes(q));
   return `
   <div class="page-head"><div><h1>Customers</h1><p>${rows.length} customer${rows.length===1?'':'s'}</p></div><button class="btn primary" data-add-customer>+ Add Customer</button></div>
-  <div class="card tight"><input class="search-input" id="custSearch" placeholder="Search name, shop or phone…" value="${U.esc(state.custQ||'')}"></div>
-  ${rows.length?`<div class="list">${rows.map(c=>{const bal=DB.customerBalance(c.id);const sales=DB.all('sales').filter(s=>s.customerId===c.id);const totalSales=U.round2(U.sum(sales,s=>s.total));return `<div class="list-item" data-open-customer="${c.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(c.name)}</div><div class="li-sub">${U.esc(c.shop||'')}${c.shop&&c.phone?' · ':''}${U.esc(c.phone||'')}</div></div><div class="li-amt ${bal>0?'neg':''}">${U.money0(bal)}</div></div><div class="li-meta"><span>Sales: <b>${U.money0(totalSales)}</b></span><span>${sales.length} order${sales.length===1?'':'s'}</span>${bal>0?'<span class="badge pending">Pending</span>':'<span class="badge paid">Clear</span>'}</div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('👥','No customers added yet.')}</div>`}
+  <div class="card tight"><input class="search-input" id="custSearch" placeholder="Search name, shop or phoneâ€¦" value="${U.esc(state.custQ||'')}"></div>
+  ${rows.length?`<div class="list">${rows.map(c=>{const bal=DB.customerBalance(c.id);const sales=DB.all('sales').filter(s=>s.customerId===c.id);const totalSales=U.round2(U.sum(sales,s=>s.total));return `<div class="list-item" data-open-customer="${c.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(c.name)}</div><div class="li-sub">${U.esc(c.shop||'')}${c.shop&&c.phone?' Â· ':''}${U.esc(c.phone||'')}</div></div><div class="li-amt ${bal>0?'neg':''}">${U.money0(bal)}</div></div><div class="li-meta"><span>Sales: <b>${U.money0(totalSales)}</b></span><span>${sales.length} order${sales.length===1?'':'s'}</span>${bal>0?'<span class="badge pending">Pending</span>':'<span class="badge paid">Clear</span>'}</div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('ðŸ‘¥','No customers added yet.')}</div>`}
   `;
 };
 
@@ -2290,16 +2306,16 @@ Views.customerForm=(existing)=>UI.form({
     {name:'phone',label:'Phone Number',type:'tel',required:true},
     {name:'city',label:'City',type:'text'},
     {name:'gst',label:'GST Number (optional)',type:'text'},
-    {name:'openingBalance',label:'Opening Balance (₹)',type:'number',min:0,step:'0.01',value:0,help:'Amount already owed to you'},
+    {name:'openingBalance',label:'Opening Balance (â‚¹)',type:'number',min:0,step:'0.01',value:0,help:'Amount already owed to you'},
     {name:'address',label:'Address',type:'textarea',col:2},
     {name:'notes',label:'Notes',type:'textarea',col:2}
   ],
   values:existing||{openingBalance:0},
-  onSubmit:(v)=>{if(existing){DB.update('customers',existing.id,v);U.toast('✓ Customer updated','ok')}else{DB.insert('customers',v);U.toast('✓ Customer saved','ok')}return true}
+  onSubmit:(v)=>{if(existing){DB.update('customers',existing.id,v);U.toast('âœ“ Customer updated','ok')}else{DB.insert('customers',v);U.toast('âœ“ Customer saved','ok')}return true}
 });
 
 Views.customerDetail=(id)=>{
-  const c=DB.find('customers',id);if(!c)return `<div class="card">${Views.empty('❓','Customer not found.')}</div>`;
+  const c=DB.find('customers',id);if(!c)return `<div class="card">${Views.empty('â“','Customer not found.')}</div>`;
   const sales=DB.all('sales').filter(s=>s.customerId===id).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const payments=DB.all('custPayments').filter(p=>p.customerId===id).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const returns=DB.all('salesReturns').filter(r=>r.customerId===id);
@@ -2309,31 +2325,31 @@ Views.customerDetail=(id)=>{
   const lastPurchase=sales[0]?.date;
 
   return `
-  <div class="page-head"><div><h1>${U.esc(c.name)}</h1><p>${U.esc(c.shop||'')}</p></div><button class="btn sm" onclick="history.back()">← Back</button></div>
+  <div class="page-head"><div><h1>${U.esc(c.name)}</h1><p>${U.esc(c.shop||'')}</p></div><button class="btn sm" onclick="history.back()">â† Back</button></div>
   <div class="card">
-    <div class="profile-head"><div class="avatar">${U.esc(U.initials(c.name))}</div><div style="min-width:0"><div style="font-weight:750;font-size:1.02rem">${U.esc(c.name)}</div><div class="tiny muted">${U.esc(c.phone||'')} ${c.city?'· '+U.esc(c.city):''}</div></div></div>
-    <div class="kv"><span>Phone</span><span>${U.esc(c.phone||'—')}</span></div>
-    <div class="kv"><span>Address</span><span>${U.esc([c.address,c.city].filter(Boolean).join(', ')||'—')}</span></div>
+    <div class="profile-head"><div class="avatar">${U.esc(U.initials(c.name))}</div><div style="min-width:0"><div style="font-weight:750;font-size:1.02rem">${U.esc(c.name)}</div><div class="tiny muted">${U.esc(c.phone||'')} ${c.city?'Â· '+U.esc(c.city):''}</div></div></div>
+    <div class="kv"><span>Phone</span><span>${U.esc(c.phone||'â€”')}</span></div>
+    <div class="kv"><span>Address</span><span>${U.esc([c.address,c.city].filter(Boolean).join(', ')||'â€”')}</span></div>
     ${c.gst?`<div class="kv"><span>GSTIN</span><span>${U.esc(c.gst)}</span></div>`:''}
   </div>
   <div class="stat-grid" style="grid-template-columns:repeat(2,1fr)">
     ${Views.statCard('c-sales','Total Sales',U.money0(totalSales),`${sales.length} orders`)}
     ${Views.statCard('c-profit','Total Paid',U.money0(totalPaid))}
     ${Views.statCard('c-pend','Balance Due',U.money0(balance),balance>0?'Pending':'Clear')}
-    ${Views.statCard('c-qty','Last Purchase',lastPurchase?U.date(lastPurchase):'—')}
+    ${Views.statCard('c-qty','Last Purchase',lastPurchase?U.date(lastPurchase):'â€”')}
   </div>
   <div class="card"><div class="row wrap">
     <button class="btn primary" data-add-sale-for="${id}">+ New Sale</button>
-    <button class="btn" data-record-payment="${id}">💰 Record Payment</button>
-    <button class="btn" data-add-delivery>🚚 New Delivery</button>
-    <button class="btn" data-edit-customer="${id}">✏️ Edit</button>
-    <button class="btn danger" data-del-customer="${id}">🗑 Delete</button>
+    <button class="btn" data-record-payment="${id}">ðŸ’° Record Payment</button>
+    <button class="btn" data-add-delivery>ðŸšš New Delivery</button>
+    <button class="btn" data-edit-customer="${id}">âœï¸ Edit</button>
+    <button class="btn danger" data-del-customer="${id}">ðŸ—‘ Delete</button>
   </div></div>
   <div class="card"><div class="card-head"><h3>Purchase History</h3></div>
-    ${sales.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Invoice</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th></th></tr></thead><tbody>${sales.map(s=>`<tr><td class="nowrap">${U.date(s.date)}</td><td>${U.esc(s.number||'')}</td><td class="num">${U.money0(s.total)}</td><td class="num">${U.money0(s.paid)}</td><td class="num ${s.pending>0?'neg':''}">${U.money0(s.pending)}</td><td><a href="#/sale/${s.id}" class="tiny">View</a></td></tr>`).join('')}</tbody></table></div>`:Views.empty('🧾','No purchases yet.')}
+    ${sales.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Invoice</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th><th></th></tr></thead><tbody>${sales.map(s=>`<tr><td class="nowrap">${U.date(s.date)}</td><td>${U.esc(s.number||'')}</td><td class="num">${U.money0(s.total)}</td><td class="num">${U.money0(s.paid)}</td><td class="num ${s.pending>0?'neg':''}">${U.money0(s.pending)}</td><td><a href="#/sale/${s.id}" class="tiny">View</a></td></tr>`).join('')}</tbody></table></div>`:Views.empty('ðŸ§¾','No purchases yet.')}
   </div>
-  ${returns.length?`<div class="card"><div class="card-head"><h3>Returns</h3></div>${returns.map(r=>`<div class="kv"><span>${U.date(r.date)} · ${U.esc(r.reason||'—')}</span><span class="neg">− ${U.money0(r.total)}</span></div>`).join('')}</div>`:''}
-  ${payments.length?`<div class="card"><div class="card-head"><h3>Payments Received</h3></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Method</th><th>Reference</th><th class="num">Amount</th></tr></thead><tbody>${payments.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.method)}</td><td>${U.esc(p.ref||'—')}</td><td class="num pos">${U.money0(p.amount)}</td></tr>`).join('')}</tbody></table></div></div>`:''}
+  ${returns.length?`<div class="card"><div class="card-head"><h3>Returns</h3></div>${returns.map(r=>`<div class="kv"><span>${U.date(r.date)} Â· ${U.esc(r.reason||'â€”')}</span><span class="neg">âˆ’ ${U.money0(r.total)}</span></div>`).join('')}</div>`:''}
+  ${payments.length?`<div class="card"><div class="card-head"><h3>Payments Received</h3></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Method</th><th>Reference</th><th class="num">Amount</th></tr></thead><tbody>${payments.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.method)}</td><td>${U.esc(p.ref||'â€”')}</td><td class="num pos">${U.money0(p.amount)}</td></tr>`).join('')}</tbody></table></div></div>`:''}
   `;
 };
 
@@ -2344,8 +2360,8 @@ Views.suppliers=(state)=>{
   if(q)rows=rows.filter(s=>(s.name||'').toLowerCase().includes(q)||(s.company||'').toLowerCase().includes(q));
   return `
   <div class="page-head"><div><h1>Suppliers</h1><p>${rows.length} supplier${rows.length===1?'':'s'}</p></div><button class="btn primary" data-add-supplier>+ Add Supplier</button></div>
-  <div class="card tight"><input class="search-input" id="suppSearch" placeholder="Search supplier…" value="${U.esc(state.suppQ||'')}"></div>
-  ${rows.length?`<div class="list">${rows.map(s=>{const bal=DB.supplierBalance(s.id);const purchases=DB.all('purchases').filter(p=>p.supplierId===s.id);const total=U.round2(U.sum(purchases,p=>p.total));return `<div class="list-item" data-open-supplier="${s.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(s.name)}</div><div class="li-sub">${U.esc(s.company||'')}${s.company&&s.phone?' · ':''}${U.esc(s.phone||'')}</div></div><div class="li-amt ${bal>0?'neg':''}">${U.money0(bal)}</div></div><div class="li-meta"><span>Purchases: <b>${U.money0(total)}</b></span><span>${purchases.length} order${purchases.length===1?'':'s'}</span>${bal>0?'<span class="badge pending">Payable</span>':'<span class="badge paid">Clear</span>'}</div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('🏭','No suppliers added yet.')}</div>`}
+  <div class="card tight"><input class="search-input" id="suppSearch" placeholder="Search supplierâ€¦" value="${U.esc(state.suppQ||'')}"></div>
+  ${rows.length?`<div class="list">${rows.map(s=>{const bal=DB.supplierBalance(s.id);const purchases=DB.all('purchases').filter(p=>p.supplierId===s.id);const total=U.round2(U.sum(purchases,p=>p.total));return `<div class="list-item" data-open-supplier="${s.id}"><div class="li-top"><div style="min-width:0"><div class="li-title">${U.esc(s.name)}</div><div class="li-sub">${U.esc(s.company||'')}${s.company&&s.phone?' Â· ':''}${U.esc(s.phone||'')}</div></div><div class="li-amt ${bal>0?'neg':''}">${U.money0(bal)}</div></div><div class="li-meta"><span>Purchases: <b>${U.money0(total)}</b></span><span>${purchases.length} order${purchases.length===1?'':'s'}</span>${bal>0?'<span class="badge pending">Payable</span>':'<span class="badge paid">Clear</span>'}</div></div>`}).join('')}</div>`:`<div class="card">${Views.empty('ðŸ­','No suppliers added yet.')}</div>`}
   `;
 };
 
@@ -2357,16 +2373,16 @@ Views.supplierForm=(existing)=>UI.form({
     {name:'company',label:'Company Name',type:'text'},
     {name:'phone',label:'Phone',type:'tel',required:true},
     {name:'gst',label:'GST Number',type:'text'},
-    {name:'openingBalance',label:'Opening Balance (₹)',type:'number',min:0,step:'0.01',value:0},
+    {name:'openingBalance',label:'Opening Balance (â‚¹)',type:'number',min:0,step:'0.01',value:0},
     {name:'address',label:'Address',type:'textarea',col:2},
     {name:'notes',label:'Notes',type:'textarea',col:2}
   ],
   values:existing||{openingBalance:0},
-  onSubmit:(v)=>{if(existing){DB.update('suppliers',existing.id,v);U.toast('✓ Supplier updated','ok')}else{DB.insert('suppliers',v);U.toast('✓ Supplier saved','ok')}return true}
+  onSubmit:(v)=>{if(existing){DB.update('suppliers',existing.id,v);U.toast('âœ“ Supplier updated','ok')}else{DB.insert('suppliers',v);U.toast('âœ“ Supplier saved','ok')}return true}
 });
 
 Views.supplierDetail=(id)=>{
-  const s=DB.find('suppliers',id);if(!s)return `<div class="card">${Views.empty('❓','Supplier not found.')}</div>`;
+  const s=DB.find('suppliers',id);if(!s)return `<div class="card">${Views.empty('â“','Supplier not found.')}</div>`;
   const purchases=DB.all('purchases').filter(p=>p.supplierId===id).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const payments=DB.all('suppPayments').filter(p=>p.supplierId===id).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const totalPurchases=U.round2(U.sum(purchases,p=>p.total));
@@ -2374,11 +2390,11 @@ Views.supplierDetail=(id)=>{
   const balance=DB.supplierBalance(id);
 
   return `
-  <div class="page-head"><div><h1>${U.esc(s.name)}</h1><p>${U.esc(s.company||'')}</p></div><button class="btn sm" onclick="history.back()">← Back</button></div>
+  <div class="page-head"><div><h1>${U.esc(s.name)}</h1><p>${U.esc(s.company||'')}</p></div><button class="btn sm" onclick="history.back()">â† Back</button></div>
   <div class="card">
     <div class="profile-head"><div class="avatar">${U.esc(U.initials(s.name))}</div><div><div style="font-weight:750">${U.esc(s.name)}</div><div class="tiny muted">${U.esc(s.phone||'')}</div></div></div>
-    <div class="kv"><span>Phone</span><span>${U.esc(s.phone||'—')}</span></div>
-    <div class="kv"><span>Address</span><span>${U.esc(s.address||'—')}</span></div>
+    <div class="kv"><span>Phone</span><span>${U.esc(s.phone||'â€”')}</span></div>
+    <div class="kv"><span>Address</span><span>${U.esc(s.address||'â€”')}</span></div>
     ${s.gst?`<div class="kv"><span>GSTIN</span><span>${U.esc(s.gst)}</span></div>`:''}
   </div>
   <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
@@ -2388,14 +2404,14 @@ Views.supplierDetail=(id)=>{
   </div>
   <div class="card"><div class="row wrap">
     <button class="btn primary" data-add-purchase>+ New Purchase</button>
-    <button class="btn" data-record-supp-payment="${id}">💸 Record Payment</button>
-    <button class="btn" data-edit-supplier="${id}">✏️ Edit</button>
-    <button class="btn danger" data-del-supplier="${id}">🗑 Delete</button>
+    <button class="btn" data-record-supp-payment="${id}">ðŸ’¸ Record Payment</button>
+    <button class="btn" data-edit-supplier="${id}">âœï¸ Edit</button>
+    <button class="btn danger" data-del-supplier="${id}">ðŸ—‘ Delete</button>
   </div></div>
   <div class="card"><div class="card-head"><h3>Purchase History</h3></div>
-    ${purchases.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>ID</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th></tr></thead><tbody>${purchases.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.number||'')}</td><td class="num">${U.money0(p.total)}</td><td class="num">${U.money0(p.paid)}</td><td class="num ${p.pending>0?'neg':''}">${U.money0(p.pending)}</td></tr>`).join('')}</tbody></table></div>`:Views.empty('🚚','No purchases yet.')}
+    ${purchases.length?`<div class="table-wrap"><table><thead><tr><th>Date</th><th>ID</th><th class="num">Total</th><th class="num">Paid</th><th class="num">Pending</th></tr></thead><tbody>${purchases.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.number||'')}</td><td class="num">${U.money0(p.total)}</td><td class="num">${U.money0(p.paid)}</td><td class="num ${p.pending>0?'neg':''}">${U.money0(p.pending)}</td></tr>`).join('')}</tbody></table></div>`:Views.empty('ðŸšš','No purchases yet.')}
   </div>
-  ${payments.length?`<div class="card"><div class="card-head"><h3>Payments Made</h3></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Method</th><th>Ref</th><th class="num">Amount</th></tr></thead><tbody>${payments.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.method)}</td><td>${U.esc(p.ref||'—')}</td><td class="num neg">${U.money0(p.amount)}</td></tr>`).join('')}</tbody></table></div></div>`:''}
+  ${payments.length?`<div class="card"><div class="card-head"><h3>Payments Made</h3></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Method</th><th>Ref</th><th class="num">Amount</th></tr></thead><tbody>${payments.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(p.method)}</td><td>${U.esc(p.ref||'â€”')}</td><td class="num neg">${U.money0(p.amount)}</td></tr>`).join('')}</tbody></table></div></div>`:''}
   `;
 };
 
@@ -2416,13 +2432,13 @@ Views.payments=()=>{
     ${Views.statCard('c-profit','Paid Out',U.money0(paid),`${suppPays.length} payments`)}
   </div>
   <div class="row wrap" style="margin-bottom:1rem">
-    <button class="btn primary" data-record-payment>💰 Customer Payment</button>
-    <button class="btn" data-record-supp-payment>💸 Supplier Payment</button>
+    <button class="btn primary" data-record-payment>ðŸ’° Customer Payment</button>
+    <button class="btn" data-record-supp-payment>ðŸ’¸ Supplier Payment</button>
   </div>
   <div class="section-title">Customer Payments</div>
-  ${custPays.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Method</th><th>Ref</th><th class="num">Amount</th><th></th></tr></thead><tbody>${custPays.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(Views.customerName(p.customerId))}</td><td>${U.esc(p.method)}</td><td class="tiny">${U.esc(p.ref||'—')}</td><td class="num pos">${U.money0(p.amount)}</td><td class="right"><button class="btn ghost sm" data-del-custpay="${p.id}">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('💰','No customer payments recorded yet.')}</div>`}
+  ${custPays.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Method</th><th>Ref</th><th class="num">Amount</th><th></th></tr></thead><tbody>${custPays.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(Views.customerName(p.customerId))}</td><td>${U.esc(p.method)}</td><td class="tiny">${U.esc(p.ref||'â€”')}</td><td class="num pos">${U.money0(p.amount)}</td><td class="right"><button class="btn ghost sm" data-del-custpay="${p.id}">ðŸ—‘</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ’°','No customer payments recorded yet.')}</div>`}
   <div class="section-title">Supplier Payments</div>
-  ${suppPays.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Supplier</th><th>Method</th><th>Ref</th><th class="num">Amount</th><th></th></tr></thead><tbody>${suppPays.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(Views.supplierName(p.supplierId))}</td><td>${U.esc(p.method)}</td><td class="tiny">${U.esc(p.ref||'—')}</td><td class="num neg">${U.money0(p.amount)}</td><td class="right"><button class="btn ghost sm" data-del-supppay="${p.id}">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('💸','No supplier payments recorded yet.')}</div>`}
+  ${suppPays.length?`<div class="card tight"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Supplier</th><th>Method</th><th>Ref</th><th class="num">Amount</th><th></th></tr></thead><tbody>${suppPays.map(p=>`<tr><td class="nowrap">${U.date(p.date)}</td><td>${U.esc(Views.supplierName(p.supplierId))}</td><td>${U.esc(p.method)}</td><td class="tiny">${U.esc(p.ref||'â€”')}</td><td class="num neg">${U.money0(p.amount)}</td><td class="right"><button class="btn ghost sm" data-del-supppay="${p.id}">ðŸ—‘</button></td></tr>`).join('')}</tbody></table></div></div>`:`<div class="card">${Views.empty('ðŸ’¸','No supplier payments recorded yet.')}</div>`}
   `;
 };
 
@@ -2433,13 +2449,13 @@ Views.customerPaymentForm=(presetId)=>{
     title:'Record Customer Payment',submitLabel:'Save Payment',
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
-      {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',value:presetId||'',options:customers.map(c=>({value:c.id,label:`${c.name} — Due ${U.money0(Math.max(0,DB.customerBalance(c.id)))}`}))},
-      {name:'amount',label:'Amount (₹)',type:'number',required:true,min:0.01,step:'0.01'},
+      {name:'customerId',label:'Customer',type:'select',required:true,placeholder:'Select customer',value:presetId||'',options:customers.map(c=>({value:c.id,label:`${c.name} â€” Due ${U.money0(Math.max(0,DB.customerBalance(c.id)))}`}))},
+      {name:'amount',label:'Amount (â‚¹)',type:'number',required:true,min:0.01,step:'0.01'},
       {name:'method',label:'Payment Method',type:'select',required:true,value:'Cash',options:['Cash','UPI','Bank Transfer','Cheque']},
       {name:'ref',label:'Reference Number',type:'text'},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
-    onSubmit:(v)=>{DB.insert('custPayments',v);U.toast('✓ Payment recorded','ok');return true}
+    onSubmit:(v)=>{DB.insert('custPayments',v);U.toast('âœ“ Payment recorded','ok');return true}
   });
 };
 
@@ -2450,13 +2466,13 @@ Views.supplierPaymentForm=(presetId)=>{
     title:'Record Supplier Payment',submitLabel:'Save Payment',
     fields:[
       {name:'date',label:'Date',type:'date',required:true,value:U.today()},
-      {name:'supplierId',label:'Supplier',type:'select',required:true,placeholder:'Select supplier',value:presetId||'',options:suppliers.map(s=>({value:s.id,label:`${s.name} — Payable ${U.money0(Math.max(0,DB.supplierBalance(s.id)))}`}))},
-      {name:'amount',label:'Amount (₹)',type:'number',required:true,min:0.01,step:'0.01'},
+      {name:'supplierId',label:'Supplier',type:'select',required:true,placeholder:'Select supplier',value:presetId||'',options:suppliers.map(s=>({value:s.id,label:`${s.name} â€” Payable ${U.money0(Math.max(0,DB.supplierBalance(s.id)))}`}))},
+      {name:'amount',label:'Amount (â‚¹)',type:'number',required:true,min:0.01,step:'0.01'},
       {name:'method',label:'Payment Method',type:'select',required:true,value:'Cash',options:['Cash','UPI','Bank Transfer','Cheque']},
       {name:'ref',label:'Reference Number',type:'text'},
       {name:'notes',label:'Notes',type:'textarea',col:2}
     ],
-    onSubmit:(v)=>{DB.insert('suppPayments',v);U.toast('✓ Payment recorded','ok');return true}
+    onSubmit:(v)=>{DB.insert('suppPayments',v);U.toast('âœ“ Payment recorded','ok');return true}
   });
 };
 
@@ -2466,7 +2482,7 @@ Views.cashflow=(state)=>{
   const cf=DB.cashFlow(range.from,range.to);
 
   return `
-  <div class="page-head"><div><h1>Cash Flow</h1><p>${U.date(range.from)} – ${U.date(range.to)}</p></div></div>
+  <div class="page-head"><div><h1>Cash Flow</h1><p>${U.date(range.from)} â€“ ${U.date(range.to)}</p></div></div>
   <div class="chips">
     ${[['today','Today'],['week','This Week'],['month','This Month'],['year','This Year'],['custom','Custom']].map(([k,l])=>`<button class="chip ${range.key===k?'active':''}" data-cf-range="${k}">${l}</button>`).join('')}
   </div>
@@ -2513,7 +2529,7 @@ Views.reports=(state)=>{
   const margin=pl.revenue?((pl.netProfit/pl.revenue)*100):0;
 
   return `
-  <div class="page-head"><div><h1>Reports & Analytics</h1><p>${U.date(r.from)} – ${U.date(r.to)}</p></div></div>
+  <div class="page-head"><div><h1>Reports & Analytics</h1><p>${U.date(r.from)} â€“ ${U.date(r.to)}</p></div></div>
   <div class="chips">
     ${[['today','Today'],['week','This Week'],['month','This Month'],['year','This Year'],['custom','Custom']].map(([k,l])=>`<button class="chip ${r.key===k?'active':''}" data-report-range="${k}">${l}</button>`).join('')}
   </div>
@@ -2522,31 +2538,31 @@ Views.reports=(state)=>{
   <div class="section-title">Profit & Loss</div>
   <div class="card">
     <div class="kv"><span>Gross Revenue</span><span class="pos">${U.money(pl.grossRevenue)}</span></div>
-    ${pl.returnsTotal?`<div class="kv"><span>Less: Sales Returns</span><span class="neg">− ${U.money(pl.returnsTotal)}</span></div>`:''}
+    ${pl.returnsTotal?`<div class="kv"><span>Less: Sales Returns</span><span class="neg">âˆ’ ${U.money(pl.returnsTotal)}</span></div>`:''}
     <div class="kv"><span>Net Revenue</span><span class="pos">${U.money(pl.revenue)}</span></div>
-    <div class="kv"><span>Cost of Goods Sold</span><span>− ${U.money(pl.cogs)}</span></div>
+    <div class="kv"><span>Cost of Goods Sold</span><span>âˆ’ ${U.money(pl.cogs)}</span></div>
     <div class="kv" style="border-top:1.5px solid var(--line);padding-top:.55rem;margin-top:.2rem"><span><b>Gross Profit</b></span><span class="${pl.grossProfit>=0?'pos':'neg'}"><b>${U.money(pl.grossProfit)}</b></span></div>
-    <div class="kv"><span>Operating Expenses</span><span>− ${U.money(pl.operating)}</span></div>
+    <div class="kv"><span>Operating Expenses</span><span>âˆ’ ${U.money(pl.operating)}</span></div>
     <div class="kv" style="border-top:2px solid var(--ink);padding-top:.6rem;margin-top:.3rem"><span><b>Net Profit</b></span><span class="${pl.netProfit>=0?'pos':'neg'}" style="font-size:1.08rem"><b>${U.money(pl.netProfit)}</b></span></div>
-    <div class="tiny muted" style="margin-top:.5rem">Margin: ${margin.toFixed(1)}% · ${pl.salesCount} invoice${pl.salesCount===1?'':'s'} · Growth vs previous period: <b class="${growth>=0?'pos':'neg'}">${growth>=0?'+':''}${growth}%</b></div>
+    <div class="tiny muted" style="margin-top:.5rem">Margin: ${margin.toFixed(1)}% Â· ${pl.salesCount} invoice${pl.salesCount===1?'':'s'} Â· Growth vs previous period: <b class="${growth>=0?'pos':'neg'}">${growth>=0?'+':''}${growth}%</b></div>
   </div>
 
   <div class="grid-dash">
     <div class="card">
       <div class="card-head"><h3>Best Sellers</h3></div>
-      ${topSellers.length?`<div class="chart-box"><canvas id="topProductsChart"></canvas></div>`:Views.empty('📦','No data available for this period')}
+      ${topSellers.length?`<div class="chart-box"><canvas id="topProductsChart"></canvas></div>`:Views.empty('ðŸ“¦','No data available for this period')}
     </div>
     <div class="card">
       <div class="card-head"><h3>Slow / Worst Movers</h3></div>
-      ${worstSellers.length?`<div class="chart-box"><canvas id="worstProductsChart"></canvas></div>`:Views.empty('📦','No data available')}
+      ${worstSellers.length?`<div class="chart-box"><canvas id="worstProductsChart"></canvas></div>`:Views.empty('ðŸ“¦','No data available')}
     </div>
     <div class="card">
       <div class="card-head"><h3>Top Customers</h3></div>
-      ${topCustomers.length?`<div class="chart-box"><canvas id="topCustomersChart"></canvas></div>`:Views.empty('👥','No data available for this period')}
+      ${topCustomers.length?`<div class="chart-box"><canvas id="topCustomersChart"></canvas></div>`:Views.empty('ðŸ‘¥','No data available for this period')}
     </div>
     <div class="card">
       <div class="card-head"><h3>Expense Mix</h3></div>
-      ${topCat?`<div class="chart-box"><canvas id="expMixChart"></canvas></div>`:Views.empty('💸','No expenses in this period')}
+      ${topCat?`<div class="chart-box"><canvas id="expMixChart"></canvas></div>`:Views.empty('ðŸ’¸','No expenses in this period')}
     </div>
   </div>
 
@@ -2562,10 +2578,10 @@ Views.reports=(state)=>{
   <div class="card">
     <div class="grid-2">
       ${[
-        ['sales','📊 Sales'],['expenses','💸 Expenses'],['purchases','🚚 Purchases'],
-        ['inventory','📦 Inventory'],['production','🏭 Production'],['cust-out','💰 Cust Outstanding'],
-        ['supp-out','📤 Supp Outstanding'],['pl','📈 P&L'],['deliveries','🚚 Deliveries'],
-        ['cashflow','💵 Cash Flow'],['returns','↩️ Returns']
+        ['sales','ðŸ“Š Sales'],['expenses','ðŸ’¸ Expenses'],['purchases','ðŸšš Purchases'],
+        ['inventory','ðŸ“¦ Inventory'],['production','ðŸ­ Production'],['cust-out','ðŸ’° Cust Outstanding'],
+        ['supp-out','ðŸ“¤ Supp Outstanding'],['pl','ðŸ“ˆ P&L'],['deliveries','ðŸšš Deliveries'],
+        ['cashflow','ðŸ’µ Cash Flow'],['returns','â†©ï¸ Returns']
       ].map(([k,l])=>`<button class="btn" data-report="${k}">${l}</button>`).join('')}
     </div>
   </div>
@@ -2573,14 +2589,14 @@ Views.reports=(state)=>{
   <div class="card">
     <div class="card-head"><h3>Export All</h3></div>
     <div class="row wrap">
-      <button class="btn sm" data-export-all="sales">⬇ Sales</button>
-      <button class="btn sm" data-export-all="expenses">⬇ Expenses</button>
-      <button class="btn sm" data-export-all="purchases">⬇ Purchases</button>
-      <button class="btn sm" data-export-all="production">⬇ Production</button>
-      <button class="btn sm" data-export-all="inventory">⬇ Inventory</button>
-      <button class="btn sm" data-export-all="customers">⬇ Customers</button>
-      <button class="btn sm" data-export-all="suppliers">⬇ Suppliers</button>
-      <button class="btn sm" data-export-all="backup">💾 Full Backup (JSON)</button>
+      <button class="btn sm" data-export-all="sales">â¬‡ Sales</button>
+      <button class="btn sm" data-export-all="expenses">â¬‡ Expenses</button>
+      <button class="btn sm" data-export-all="purchases">â¬‡ Purchases</button>
+      <button class="btn sm" data-export-all="production">â¬‡ Production</button>
+      <button class="btn sm" data-export-all="inventory">â¬‡ Inventory</button>
+      <button class="btn sm" data-export-all="customers">â¬‡ Customers</button>
+      <button class="btn sm" data-export-all="suppliers">â¬‡ Suppliers</button>
+      <button class="btn sm" data-export-all="backup">ðŸ’¾ Full Backup (JSON)</button>
     </div>
   </div>`;
 };
@@ -2634,14 +2650,14 @@ Views.runReport=(kind,state)=>{
   }else if(kind==='deliveries'){title='Delivery Report';headers=['Date','Customer','Person','Vehicle','Address','To Collect','Collected','Status'];
     DB.all('deliveries').filter(d=>U.inRange(d.date,r.from,r.to)).forEach(d=>rows.push([U.date(d.date),Views.customerName(d.customerId),d.person||'',d.vehicle||'',d.address||'',d.amountToCollect||0,d.amountCollected||0,d.status]));
   }else if(kind==='cashflow'){title='Cash Flow Report';headers=['Period','Cash In','Cash Out','Net'];
-    const cf=DB.cashFlow(r.from,r.to);rows.push([`${U.date(r.from)} – ${U.date(r.to)}`,cf.cashIn,cf.cashOut,cf.net]);
+    const cf=DB.cashFlow(r.from,r.to);rows.push([`${U.date(r.from)} â€“ ${U.date(r.to)}`,cf.cashIn,cf.cashOut,cf.net]);
   }else if(kind==='returns'){title='Returns Report';headers=['Type','Date','Party','Items','Amount'];
     DB.all('salesReturns').filter(x=>U.inRange(x.date,r.from,r.to)).forEach(x=>rows.push(['Sales',U.date(x.date),Views.customerName(x.customerId),(x.items||[]).map(i=>`${Views.productName(i.productId)} x${i.qty}`).join('; '),-x.total]));
     DB.all('purchaseReturns').filter(x=>U.inRange(x.date,r.from,r.to)).forEach(x=>rows.push(['Purchase',U.date(x.date),Views.supplierName(x.supplierId),(x.items||[]).map(i=>`${Views.materialName(i.materialId)} x${i.qty}`).join('; '),-x.total]));
   }
 
   UI.info(title,`
-    <p class="muted small">${U.date(r.from)} – ${U.date(r.to)} · ${rows.length} row${rows.length===1?'':'s'}</p>
+    <p class="muted small">${U.date(r.from)} â€“ ${U.date(r.to)} Â· ${rows.length} row${rows.length===1?'':'s'}</p>
     <div class="table-wrap" style="max-height:50vh;overflow-y:auto;margin-top:.6rem">
       <table><thead><tr>${headers.map(h=>`<th>${U.esc(h)}</th>`).join('')}</tr></thead><tbody>
         ${rows.length?rows.map(row=>`<tr>${row.map(cell=>`<td class="${typeof cell==='number'?'num':''}">${typeof cell==='number'?U.money0(cell):U.esc(cell)}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${headers.length}" class="center muted" style="padding:1.5rem">No data in this period</td></tr>`}
@@ -2649,8 +2665,8 @@ Views.runReport=(kind,state)=>{
     </div>
     <div class="sheet-actions">
       <button class="btn" data-close>Close</button>
-      <button class="btn primary" id="repExport">⬇ Export CSV</button>
-      <button class="btn" id="repPrint">🖨 Print</button>
+      <button class="btn primary" id="repExport">â¬‡ Export CSV</button>
+      <button class="btn" id="repPrint">ðŸ–¨ Print</button>
     </div>`);
   setTimeout(()=>{
     const exp=document.getElementById('repExport');const pr=document.getElementById('repPrint');
@@ -2665,7 +2681,7 @@ Views.runReport=(kind,state)=>{
 };
 
 Views.exportAll=(kind)=>{
-  if(kind==='backup'){U.downloadJSON(DB.data,`dms-backup-${U.today()}.json`);U.toast('✓ Backup downloaded','ok');return}
+  if(kind==='backup'){U.downloadJSON(DB.data,`dms-backup-${U.today()}.json`);U.toast('âœ“ Backup downloaded','ok');return}
   if(kind==='sales'){U.downloadCSV('sales.csv',['Date','Invoice','Customer','Items','Total','Paid','Pending','Method','Status'],DB.all('sales').map(s=>[U.date(s.date),s.number||'',Views.customerName(s.customerId),(s.items||[]).map(i=>`${Views.productName(i.productId)} x${i.qty}`).join('; '),s.total,s.paid,s.pending,s.method,Views.saleStatus(s)]))}
   else if(kind==='expenses'){U.downloadCSV('expenses.csv',['Date','Category','Description','Amount','Method','Notes'],DB.all('expenses').map(e=>[U.date(e.date),e.category,e.description||'',e.amount,e.method||'',e.notes||'']))}
   else if(kind==='purchases'){U.downloadCSV('purchases.csv',['Date','ID','Supplier','Items','Total','Paid','Pending'],DB.all('purchases').map(p=>[U.date(p.date),p.number||'',Views.supplierName(p.supplierId),(p.items||[]).map(i=>`${Views.materialName(i.materialId)} x${i.qty}`).join('; '),p.total,p.paid,p.pending]))}
@@ -2673,7 +2689,7 @@ Views.exportAll=(kind)=>{
   else if(kind==='inventory'){U.downloadCSV('inventory.csv',['Product','SKU','Opening','In','Sold','Damaged','Current','Min','Cost','Value'],DB.all('products').map(p=>{const b=DB.productStockBreakdown(p.id);return [Views.productLabel(p),p.sku||'',b.opening,b.purchased+b.produced+b.returned,b.sold,b.damaged,b.current,p.minStock||0,p.costPrice||0,U.round2(b.current*(Number(p.costPrice)||0))]}))}
   else if(kind==='customers'){U.downloadCSV('customers.csv',['Name','Shop','Phone','City','GST','Balance'],DB.all('customers').map(c=>[c.name,c.shop||'',c.phone||'',c.city||'',c.gst||'',DB.customerBalance(c.id)]))}
   else if(kind==='suppliers'){U.downloadCSV('suppliers.csv',['Name','Company','Phone','GST','Balance'],DB.all('suppliers').map(s=>[s.name,s.company||'',s.phone||'',s.gst||'',DB.supplierBalance(s.id)]))}
-  U.toast('✓ CSV exported','ok');
+  U.toast('âœ“ CSV exported','ok');
 };
 
 /* ---------- SETTINGS ---------- */
@@ -2722,7 +2738,7 @@ Views.settings=()=>{
     <div class="card-head"><h3>Preferences</h3></div>
     <form class="form" id="prefsForm">
       <label>Low Stock Threshold<input name="lowStockThreshold" type="number" min="0" value="${s.lowStockThreshold}"></label>
-      <label>Currency<input value="₹ INR (Indian Rupee)" disabled></label>
+      <label>Currency<input value="â‚¹ INR (Indian Rupee)" disabled></label>
       <label>Date Format<input value="DD/MM/YYYY" disabled></label>
       <button class="btn primary block" type="submit">Save Preferences</button>
     </form>
@@ -2731,51 +2747,51 @@ Views.settings=()=>{
   <div class="card">
     <div class="card-head"><h3>Account & Sync</h3></div>
     <div class="kv"><span>Signed in as</span><span>${U.esc(App.fbUser?.email || App.session()?.login || 'Offline mode')}</span></div>
-    <div class="kv"><span>Cloud sync</span><span>${Cloud.enabled?(Cloud.status==='ok'?'🟢 Active':Cloud.status==='syncing'?'🔵 Syncing…':Cloud.status==='error'?'🔴 Error':'⚪ Connecting'):'⚪ Offline only'}</span></div>
+    <div class="kv"><span>Cloud sync</span><span>${Cloud.enabled?(Cloud.status==='ok'?'ðŸŸ¢ Active':Cloud.status==='syncing'?'ðŸ”µ Syncingâ€¦':Cloud.status==='error'?'ðŸ”´ Error':'âšª Connecting'):'âšª Offline only'}</span></div>
     ${Cloud.lastError?`<div class="tiny neg">${U.esc(Cloud.lastError)}</div>`:''}
-    <div class="kv"><span>Last local change</span><span>${DB.data.updatedAt?new Date(DB.data.updatedAt).toLocaleString('en-IN'):'—'}</span></div>
+    <div class="kv"><span>Last local change</span><span>${DB.data.updatedAt?new Date(DB.data.updatedAt).toLocaleString('en-IN'):'â€”'}</span></div>
     <div class="row wrap" style="margin-top:.8rem">
-      <button class="btn" id="syncNowBtn">🔄 Sync Now</button>
-      <button class="btn" id="changePassBtn">🔑 Reset Password Email</button>
-      <button class="btn danger" id="logoutBtn">🚪 Sign Out</button>
+      <button class="btn" id="syncNowBtn">ðŸ”„ Sync Now</button>
+      <button class="btn" id="changePassBtn">ðŸ”‘ Reset Password Email</button>
+      <button class="btn danger" id="logoutBtn">ðŸšª Sign Out</button>
     </div>
   </div>
 
   <div class="card">
     <div class="card-head"><h3>Data</h3></div>
     <p class="muted small">Data is stored on this device and synced to the cloud when signed in. Take regular backups anyway.</p>
-    <div class="row wrap" style="margin-top:.6rem"><button class="btn" id="backupBtn">💾 Download Backup</button><button class="btn" id="restoreBtn">📂 Restore</button><button class="btn danger" id="resetBtn">⚠️ Factory Reset</button></div>
+    <div class="row wrap" style="margin-top:.6rem"><button class="btn" id="backupBtn">ðŸ’¾ Download Backup</button><button class="btn" id="restoreBtn">ðŸ“‚ Restore</button><button class="btn danger" id="resetBtn">âš ï¸ Factory Reset</button></div>
     <input type="file" id="restoreFile" accept=".json" style="display:none">
   </div>
-  <div class="card"><div class="card-head"><h3>About</h3></div><p class="muted small">Business Manager v2.0 · Firebase sync · Recipes · Production · Returns · Deliveries · Cash flow · Invoice generator</p></div>
+  <div class="card"><div class="card-head"><h3>About</h3></div><p class="muted small">Business Manager v2.0 Â· Firebase sync Â· Recipes Â· Production Â· Returns Â· Deliveries Â· Cash flow Â· Invoice generator</p></div>
   `;
 };
 
 /* ---------- MORE ---------- */
 Views.more=()=>{
   const items=[
-    ['#/dashboard','🏠','Dashboard'],
-    ['#/sales','🧾','Sales'],
-    ['#/salesReturns','↩️','Sales Returns'],
-    ['#/expenses','💸','Expenses'],
-    ['#/purchases','🚚','Purchases'],
-    ['#/purchaseReturns','↩️','Purchase Returns'],
-    ['#/products','📦','Products'],
-    ['#/recipes','🧪','Formulas & Recipes'],
-    ['#/inventory','🏬','Inventory'],
-    ['#/production','🏭','Production'],
-    ['#/deliveries','🚚','Deliveries'],
-    ['#/customers','👥','Customers'],
-    ['#/suppliers','🏢','Suppliers'],
-    ['#/payments','💰','Payments'],
-    ['#/cashflow','💵','Cash Flow'],
-    ['#/reports','📊','Reports & Analytics'],
-    ['#/settings','⚙️','Settings']
+    ['#/dashboard','ðŸ ','Dashboard'],
+    ['#/sales','ðŸ§¾','Sales'],
+    ['#/salesReturns','â†©ï¸','Sales Returns'],
+    ['#/expenses','ðŸ’¸','Expenses'],
+    ['#/purchases','ðŸšš','Purchases'],
+    ['#/purchaseReturns','â†©ï¸','Purchase Returns'],
+    ['#/products','ðŸ“¦','Products'],
+    ['#/recipes','ðŸ§ª','Formulas & Recipes'],
+    ['#/inventory','ðŸ¬','Inventory'],
+    ['#/production','ðŸ­','Production'],
+    ['#/deliveries','ðŸšš','Deliveries'],
+    ['#/customers','ðŸ‘¥','Customers'],
+    ['#/suppliers','ðŸ¢','Suppliers'],
+    ['#/payments','ðŸ’°','Payments'],
+    ['#/cashflow','ðŸ’µ','Cash Flow'],
+    ['#/reports','ðŸ“Š','Reports & Analytics'],
+    ['#/settings','âš™ï¸','Settings']
   ];
   return `
   <div class="page-head"><div><h1>More</h1><p>All sections</p></div></div>
-  <div class="card tight"><div class="list">${items.map(([href,ico,label])=>`<a class="list-item" href="${href}" style="text-decoration:none;color:inherit"><div class="li-top"><span class="li-title">${ico} ${label}</span><span class="muted">›</span></div></a>`).join('')}</div></div>
-  <div class="card"><button class="btn danger block" id="logoutBtn2">🚪 Sign Out</button></div>`;
+  <div class="card tight"><div class="list">${items.map(([href,ico,label])=>`<a class="list-item" href="${href}" style="text-decoration:none;color:inherit"><div class="li-top"><span class="li-title">${ico} ${label}</span><span class="muted">â€º</span></div></a>`).join('')}</div></div>
+  <div class="card"><button class="btn danger block" id="logoutBtn2">ðŸšª Sign Out</button></div>`;
 };
 
 /* ============================================================
@@ -2790,7 +2806,7 @@ const App={
     else localStorage.removeItem('dms_session');
   },
 
-  /* email for firebase: phone → synthetic email */
+  /* email for firebase: phone â†’ synthetic email */
   toEmail(id){
     const v=String(id||'').trim();
     if(v.includes('@')) return v.toLowerCase();
@@ -2805,7 +2821,7 @@ const App={
     this.updateCloudBadge();
 
     if(!fbReady){
-      U.toast('Firebase unavailable — running offline','warn');
+      U.toast('Firebase unavailable â€” running offline','warn');
       this.showLogin();
       return;
     }
@@ -2855,14 +2871,14 @@ const App={
     const el=document.getElementById('cloudBadge');if(!el)return;
     if(!Cloud.enabled){
       el.className='cloud-badge off';
-      el.textContent = this.offlineMode ? '● Offline mode' : '● Offline';
+      el.textContent = this.offlineMode ? 'â— Offline mode' : 'â— Offline';
       return;
     }
-    if(Cloud.status==='ok'){el.className='cloud-badge ok';el.textContent='☁ Synced'}
-    else if(Cloud.status==='syncing'){el.className='cloud-badge sync';el.textContent='↻ Syncing'}
-    else if(Cloud.status==='connecting'){el.className='cloud-badge sync';el.textContent='↻ Connecting'}
-    else if(Cloud.status==='error'){el.className='cloud-badge err';el.textContent='⚠ Sync error'}
-    else {el.className='cloud-badge off';el.textContent='● Offline'}
+    if(Cloud.status==='ok'){el.className='cloud-badge ok';el.textContent='â˜ Synced'}
+    else if(Cloud.status==='syncing'){el.className='cloud-badge sync';el.textContent='â†» Syncing'}
+    else if(Cloud.status==='connecting'){el.className='cloud-badge sync';el.textContent='â†» Connecting'}
+    else if(Cloud.status==='error'){el.className='cloud-badge err';el.textContent='âš  Sync error'}
+    else {el.className='cloud-badge off';el.textContent='â— Offline'}
   },
 
   bindLogin(){
@@ -2877,7 +2893,7 @@ const App={
       if(m==='signup'){
         submit.textContent='Create account';
         pass2Wrap.classList.remove('hidden');
-        document.getElementById('signupBtn').textContent='← Back to sign in';
+        document.getElementById('signupBtn').textContent='â† Back to sign in';
         document.getElementById('loginSub').textContent='Create your business account';
       }else{
         submit.textContent='Sign in';
@@ -2904,15 +2920,15 @@ const App={
       if(!fbReady){errEl.textContent='Firebase is not available. Use "Continue offline" instead.';return}
 
       const email=this.toEmail(id);
-      submit.disabled=true;const orig=submit.textContent;submit.textContent=mode==='signup'?'Creating…':'Signing in…';
+      submit.disabled=true;const orig=submit.textContent;submit.textContent=mode==='signup'?'Creatingâ€¦':'Signing inâ€¦';
 
       try{
         if(mode==='signup'){
           await createUserWithEmailAndPassword(fbAuth,email,pass);
-          U.toast('✓ Account created','ok');
+          U.toast('âœ“ Account created','ok');
         }else{
           await signInWithEmailAndPassword(fbAuth,email,pass);
-          U.toast('✓ Signed in','ok');
+          U.toast('âœ“ Signed in','ok');
         }
         if(remember)localStorage.setItem('dms_remember',id);
         document.getElementById('loginPass').value='';
@@ -2944,7 +2960,7 @@ const App={
       Cloud.detach();
       this.setSession({userId:'offline',login:'Offline mode',offline:true},false);
       this.updateCloudBadge();
-      U.toast('Running offline — data stays on this device','warn');
+      U.toast('Running offline â€” data stays on this device','warn');
       this.showApp();
     });
   },
@@ -2982,9 +2998,9 @@ const App={
         case 'reports':html=Views.reports(this.state);after=()=>Views.afterReports(this.state);break;
         case 'settings':html=Views.settings();break;
         case 'more':html=Views.more();break;
-        default:html=`<div class="card">${Views.empty('🔍','Page not found.')}</div>`;
+        default:html=`<div class="card">${Views.empty('ðŸ”','Page not found.')}</div>`;
       }
-    }catch(err){console.error('Render error',err);html=`<div class="card"><div class="alert danger"><span class="ico">⚠️</span><div><strong>Unable to load this page</strong>${U.esc(err.message||'Unknown error')}</div></div></div>`}
+    }catch(err){console.error('Render error',err);html=`<div class="card"><div class="alert danger"><span class="ico">âš ï¸</span><div><strong>Unable to load this page</strong>${U.esc(err.message||'Unknown error')}</div></div></div>`}
     el.innerHTML=html;
     this.highlightNav(view);
     if(after){
@@ -3007,25 +3023,25 @@ const App={
 
   sidebarHTML(){
     const items=[
-      ['#/dashboard','🏠','Dashboard'],
-      ['#/sales','🧾','Sales'],
-      ['#/expenses','💸','Expenses'],
-      ['#/purchases','🚚','Purchases'],
-      ['#/products','📦','Products'],
-      ['#/recipes','🧪','Recipes'],
-      ['#/inventory','🏬','Inventory'],
-      ['#/production','🏭','Production'],
-      ['#/deliveries','🚚','Deliveries'],
-      ['#/customers','👥','Customers'],
-      ['#/suppliers','🏢','Suppliers'],
-      ['#/payments','💰','Payments'],
-      ['#/cashflow','💵','Cash Flow'],
-      ['#/reports','📊','Reports'],
-      ['#/settings','⚙️','Settings']
+      ['#/dashboard','ðŸ ','Dashboard'],
+      ['#/sales','ðŸ§¾','Sales'],
+      ['#/expenses','ðŸ’¸','Expenses'],
+      ['#/purchases','ðŸšš','Purchases'],
+      ['#/products','ðŸ“¦','Products'],
+      ['#/recipes','ðŸ§ª','Recipes'],
+      ['#/inventory','ðŸ¬','Inventory'],
+      ['#/production','ðŸ­','Production'],
+      ['#/deliveries','ðŸšš','Deliveries'],
+      ['#/customers','ðŸ‘¥','Customers'],
+      ['#/suppliers','ðŸ¢','Suppliers'],
+      ['#/payments','ðŸ’°','Payments'],
+      ['#/cashflow','ðŸ’µ','Cash Flow'],
+      ['#/reports','ðŸ“Š','Reports'],
+      ['#/settings','âš™ï¸','Settings']
     ];
     const biz=DB.data.settings.businessName||'MY DETERGENT BUSINESS';
     return `
-      <div class="side-brand"><div class="mk">🧼</div><div style="min-width:0"><strong>${U.esc(biz)}</strong><span>Business Manager</span></div></div>
+      <div class="side-brand"><div class="mk"><img src="${BRAND_LOGO}" alt="Logo"></div><div style="min-width:0"><strong>${U.esc(biz)}</strong><span>Business Manager</span></div></div>
       <nav>${items.map(([h,i,l])=>`<a href="${h}"><i>${i}</i>${l}</a>`).join('')}</nav>`;
   },
 
@@ -3057,11 +3073,11 @@ const App={
     document.getElementById('searchBtn').addEventListener('click',()=>this.openSearch());
     document.getElementById('profileBtn').addEventListener('click',()=>{
       UI.actions('Account',[
-        {icon:'⚙️',label:'Settings',onClick:()=>location.hash='#/settings'},
-        {icon:'☁️',label:Cloud.enabled?'Cloud sync: '+(Cloud.status==='ok'?'Active':Cloud.status):'Offline mode',onClick:()=>Cloud.enabled&&Cloud.push()},
-        {icon:'💾',label:'Download Backup',onClick:()=>Views.exportAll('backup')},
-        {icon:'🔍',label:'Search everything',onClick:()=>this.openSearch()},
-        {icon:'🚪',label:'Sign Out',onClick:()=>this.logout()}
+        {icon:'âš™ï¸',label:'Settings',onClick:()=>location.hash='#/settings'},
+        {icon:'â˜ï¸',label:Cloud.enabled?'Cloud sync: '+(Cloud.status==='ok'?'Active':Cloud.status):'Offline mode',onClick:()=>Cloud.enabled&&Cloud.push()},
+        {icon:'ðŸ’¾',label:'Download Backup',onClick:()=>Views.exportAll('backup')},
+        {icon:'ðŸ”',label:'Search everything',onClick:()=>this.openSearch()},
+        {icon:'ðŸšª',label:'Sign Out',onClick:()=>this.logout()}
       ]);
     });
     document.getElementById('menuBtn').addEventListener('click',()=>this.openDrawer());
@@ -3084,17 +3100,17 @@ const App={
 
   quickAdd(){
     UI.actions('Quick Add',[
-      {icon:'🧾',label:'New Sale',onClick:()=>this.addSale()},
-      {icon:'💸',label:'New Expense',onClick:()=>Views.expenseForm()},
-      {icon:'🚚',label:'New Purchase',onClick:()=>Views.purchaseForm()},
-      {icon:'🏭',label:'New Production Batch',onClick:()=>Views.productionForm()},
-      {icon:'🧪',label:'New Recipe',onClick:()=>Views.recipeForm()},
-      {icon:'📦',label:'New Product',onClick:()=>Views.productForm()},
-      {icon:'👥',label:'New Customer',onClick:()=>Views.customerForm()},
-      {icon:'🏢',label:'New Supplier',onClick:()=>Views.supplierForm()},
-      {icon:'💰',label:'Customer Payment',onClick:()=>Views.customerPaymentForm()},
-      {icon:'🚚',label:'New Delivery',onClick:()=>Views.deliveryForm()},
-      {icon:'↩️',label:'Sales Return',onClick:()=>Views.salesReturnForm()}
+      {icon:'ðŸ§¾',label:'New Sale',onClick:()=>this.addSale()},
+      {icon:'ðŸ’¸',label:'New Expense',onClick:()=>Views.expenseForm()},
+      {icon:'ðŸšš',label:'New Purchase',onClick:()=>Views.purchaseForm()},
+      {icon:'ðŸ­',label:'New Production Batch',onClick:()=>Views.productionForm()},
+      {icon:'ðŸ§ª',label:'New Recipe',onClick:()=>Views.recipeForm()},
+      {icon:'ðŸ“¦',label:'New Product',onClick:()=>Views.productForm()},
+      {icon:'ðŸ‘¥',label:'New Customer',onClick:()=>Views.customerForm()},
+      {icon:'ðŸ¢',label:'New Supplier',onClick:()=>Views.supplierForm()},
+      {icon:'ðŸ’°',label:'Customer Payment',onClick:()=>Views.customerPaymentForm()},
+      {icon:'ðŸšš',label:'New Delivery',onClick:()=>Views.deliveryForm()},
+      {icon:'â†©ï¸',label:'Sales Return',onClick:()=>Views.salesReturnForm()}
     ]);
   },
 
@@ -3111,9 +3127,9 @@ const App={
     ov.innerHTML=`
       <div class="search-panel">
         <div class="search-head">
-          <span style="font-size:1.1rem">🔍</span>
-          <input type="search" id="gsInput" placeholder="Search products, customers, invoices, recipes, deliveries…" autocomplete="off">
-          <button class="icon-btn" id="gsClose">✕</button>
+          <span style="font-size:1.1rem">ðŸ”</span>
+          <input type="search" id="gsInput" placeholder="Search products, customers, invoices, recipes, deliveriesâ€¦" autocomplete="off">
+          <button class="icon-btn" id="gsClose">âœ•</button>
         </div>
         <div class="search-body" id="gsBody"></div>
       </div>`;
@@ -3129,7 +3145,7 @@ const App={
     const render=(q)=>{
       q=(q||'').trim().toLowerCase();
       if(q.length<1){
-        body.innerHTML=`<div class="muted small center" style="padding:1.6rem .5rem">Start typing to search across your business.<br><span class="tiny">Tip: press Ctrl/⌘ + K anytime</span></div>`;
+        body.innerHTML=`<div class="muted small center" style="padding:1.6rem .5rem">Start typing to search across your business.<br><span class="tiny">Tip: press Ctrl/âŒ˜ + K anytime</span></div>`;
         return;
       }
       const groups={};
@@ -3137,55 +3153,55 @@ const App={
 
       DB.all('products').forEach(p=>{
         if((p.name||'').toLowerCase().includes(q)||(p.sku||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q))
-          add('Products',{label:Views.productLabel(p),sub:`${p.sku||''} · Stock ${U.num(DB.productStock(p.id),0)} ${p.unit||''}`,href:'#/product/'+p.id});
+          add('Products',{label:Views.productLabel(p),sub:`${p.sku||''} Â· Stock ${U.num(DB.productStock(p.id),0)} ${p.unit||''}`,href:'#/product/'+p.id});
       });
       DB.all('customers').forEach(c=>{
         if((c.name||'').toLowerCase().includes(q)||(c.phone||'').includes(q)||(c.shop||'').toLowerCase().includes(q)||(c.city||'').toLowerCase().includes(q))
-          add('Customers',{label:c.name,sub:`${c.phone||''} · Due ${U.money0(DB.customerBalance(c.id))}`,href:'#/customer/'+c.id});
+          add('Customers',{label:c.name,sub:`${c.phone||''} Â· Due ${U.money0(DB.customerBalance(c.id))}`,href:'#/customer/'+c.id});
       });
       DB.all('sales').forEach(s=>{
         const cust=Views.customerName(s.customerId);
         const itemMatch=(s.items||[]).some(i=>Views.productName(i.productId).toLowerCase().includes(q));
         if((s.number||'').toLowerCase().includes(q)||cust.toLowerCase().includes(q)||itemMatch)
-          add('Invoices',{label:s.number||'Sale',sub:`${U.date(s.date)} · ${cust} · ${U.money0(s.total)} · ${Views.saleStatus(s)}`,href:'#/sale/'+s.id});
+          add('Invoices',{label:s.number||'Sale',sub:`${U.date(s.date)} Â· ${cust} Â· ${U.money0(s.total)} Â· ${Views.saleStatus(s)}`,href:'#/sale/'+s.id});
       });
       DB.all('suppliers').forEach(s=>{
         if((s.name||'').toLowerCase().includes(q)||(s.company||'').toLowerCase().includes(q)||(s.phone||'').includes(q))
-          add('Suppliers',{label:s.name,sub:`${s.company||''} ${s.phone||''} · Payable ${U.money0(DB.supplierBalance(s.id))}`,href:'#/supplier/'+s.id});
+          add('Suppliers',{label:s.name,sub:`${s.company||''} ${s.phone||''} Â· Payable ${U.money0(DB.supplierBalance(s.id))}`,href:'#/supplier/'+s.id});
       });
       DB.all('recipes').forEach(r=>{
         if((r.name||'').toLowerCase().includes(q))
-          add('Recipes',{label:r.name,sub:`${(r.items||[]).length} ingredients · ${U.money0(DB.recipeCost(r.id))}`,href:'#/recipe/'+r.id});
+          add('Recipes',{label:r.name,sub:`${(r.items||[]).length} ingredients Â· ${U.money0(DB.recipeCost(r.id))}`,href:'#/recipe/'+r.id});
       });
       DB.all('rawMaterials').forEach(m=>{
         if((m.name||'').toLowerCase().includes(q))
-          add('Raw Materials',{label:m.name,sub:`Stock ${U.num(DB.rawStock(m.id),2)} ${m.unit||''} · ${U.money(m.cost||0)}`,href:'#/inventory'});
+          add('Raw Materials',{label:m.name,sub:`Stock ${U.num(DB.rawStock(m.id),2)} ${m.unit||''} Â· ${U.money(m.cost||0)}`,href:'#/inventory'});
       });
       DB.all('deliveries').forEach(d=>{
         const cust=Views.customerName(d.customerId);
         if(cust.toLowerCase().includes(q)||(d.person||'').toLowerCase().includes(q)||(d.vehicle||'').toLowerCase().includes(q)||(d.status||'').toLowerCase().includes(q))
-          add('Deliveries',{label:`${cust} · ${d.status}`,sub:`${U.date(d.date)} · ${d.person||''} ${d.vehicle||''}`,href:'#/delivery/'+d.id});
+          add('Deliveries',{label:`${cust} Â· ${d.status}`,sub:`${U.date(d.date)} Â· ${d.person||''} ${d.vehicle||''}`,href:'#/delivery/'+d.id});
       });
       DB.all('purchases').forEach(p=>{
         if((p.number||'').toLowerCase().includes(q)||Views.supplierName(p.supplierId).toLowerCase().includes(q))
-          add('Purchases',{label:p.number||'Purchase',sub:`${U.date(p.date)} · ${Views.supplierName(p.supplierId)} · ${U.money0(p.total)}`,href:'#/purchases'});
+          add('Purchases',{label:p.number||'Purchase',sub:`${U.date(p.date)} Â· ${Views.supplierName(p.supplierId)} Â· ${U.money0(p.total)}`,href:'#/purchases'});
       });
       DB.all('expenses').forEach(e=>{
         if((e.description||'').toLowerCase().includes(q)||(e.category||'').toLowerCase().includes(q))
-          add('Expenses',{label:e.description||e.category,sub:`${U.date(e.date)} · ${e.category} · ${U.money0(e.amount)}`,href:'#/expenses'});
+          add('Expenses',{label:e.description||e.category,sub:`${U.date(e.date)} Â· ${e.category} Â· ${U.money0(e.amount)}`,href:'#/expenses'});
       });
       DB.all('production').forEach(b=>{
         if((b.number||'').toLowerCase().includes(q)||Views.productName(b.productId).toLowerCase().includes(q))
-          add('Production',{label:b.number||'Batch',sub:`${U.date(b.date)} · ${Views.productName(b.productId)} · ${U.num(b.qty,0)} units`,href:'#/production'});
+          add('Production',{label:b.number||'Batch',sub:`${U.date(b.date)} Â· ${Views.productName(b.productId)} Â· ${U.num(b.qty,0)} units`,href:'#/production'});
       });
 
       const keys=Object.keys(groups);
       const total=keys.reduce((a,k)=>a+groups[k].length,0);
-      if(!total){body.innerHTML=`<div class="empty"><span class="ic">🔍</span><p>No results for “${U.esc(q)}”</p></div>`;return}
+      if(!total){body.innerHTML=`<div class="empty"><span class="ic">ðŸ”</span><p>No results for â€œ${U.esc(q)}â€</p></div>`;return}
 
       body.innerHTML=keys.map(k=>`
-        <div class="sr-group">${U.esc(k)} · ${groups[k].length}</div>
-        ${groups[k].slice(0,8).map(it=>`<div class="sr-item" data-href="${U.esc(it.href)}"><div style="min-width:0"><div class="t">${U.esc(it.label)}</div><div class="s">${U.esc(it.sub)}</div></div><span class="muted">›</span></div>`).join('')}
+        <div class="sr-group">${U.esc(k)} Â· ${groups[k].length}</div>
+        ${groups[k].slice(0,8).map(it=>`<div class="sr-item" data-href="${U.esc(it.href)}"><div style="min-width:0"><div class="t">${U.esc(it.label)}</div><div class="s">${U.esc(it.sub)}</div></div><span class="muted">â€º</span></div>`).join('')}
       `).join('');
     };
 
@@ -3342,10 +3358,10 @@ const App={
           `Invoice: ${s.number||''}`,
           `Date: ${U.date(s.date)}`,
           ``,
-          ...(s.items||[]).map(i=>`• ${Views.productName(i.productId)} × ${U.num(i.qty,2)} = ${U.money(Views.lineTotal(i))}`),
+          ...(s.items||[]).map(i=>`â€¢ ${Views.productName(i.productId)} Ã— ${U.num(i.qty,2)} = ${U.money(Views.lineTotal(i))}`),
           ``,
           `Subtotal: ${U.money(s.subtotal)}`,
-          Number(s.discount)?`Discount: − ${U.money(s.discount)}`:'',
+          Number(s.discount)?`Discount: âˆ’ ${U.money(s.discount)}`:'',
           Number(s.taxAmount)?`Tax: + ${U.money(s.taxAmount)}`:'',
           `*Total: ${U.money(s.total)}*`,
           `Paid: ${U.money(s.paid)}`,
@@ -3372,15 +3388,15 @@ const App={
       }
       if(id==='salesExport'){
         U.downloadCSV('sales.csv',['Date','Invoice','Customer','Total','Paid','Pending','Status'],DB.all('sales').map(s=>[U.date(s.date),s.number||'',Views.customerName(s.customerId),s.total,s.paid,s.pending,Views.saleStatus(s)]));
-        U.toast('✓ CSV exported','ok');return true;
+        U.toast('âœ“ CSV exported','ok');return true;
       }
       if(id==='expExport'){
         U.downloadCSV('expenses.csv',['Date','Category','Description','Amount','Method'],DB.all('expenses').map(e=>[U.date(e.date),e.category,e.description||'',e.amount,e.method||'']));
-        U.toast('✓ CSV exported','ok');return true;
+        U.toast('âœ“ CSV exported','ok');return true;
       }
       if(id==='purExport'){
         U.downloadCSV('purchases.csv',['Date','ID','Supplier','Total','Paid','Pending'],DB.all('purchases').map(p=>[U.date(p.date),p.number||'',Views.supplierName(p.supplierId),p.total,p.paid,p.pending]));
-        U.toast('✓ CSV exported','ok');return true;
+        U.toast('âœ“ CSV exported','ok');return true;
       }
       if(id==='salesClear'){this.state.salesFilter={q:'',from:'',to:'',customerId:'',productId:''};this.route();return true}
       if(id==='expClear'){this.state.expFilter={q:'',from:'',to:'',category:''};this.route();return true}
@@ -3400,7 +3416,7 @@ const App={
           if(!Cloud.enabled){U.toast('Cloud sync is off (offline mode)','warn');return}
           Cloud.status='syncing';this.updateCloudBadge();
           await Cloud.push();
-          U.toast(Cloud.status==='ok'?'✓ Synced to cloud':'Sync failed','ok');
+          U.toast(Cloud.status==='ok'?'âœ“ Synced to cloud':'Sync failed','ok');
         })();
         return true;
       }
@@ -3462,7 +3478,7 @@ const App={
         if(!v.businessName){U.toast('Business name is required','err');return}
         Object.assign(DB.data.settings,v);DB.save();
         document.getElementById('topBizName').textContent=v.businessName;
-        this.renderSidebar();U.toast('✓ Saved','ok');
+        this.renderSidebar();U.toast('âœ“ Saved','ok');
       });
     }
     const invf=document.getElementById('invoiceForm');
@@ -3470,7 +3486,7 @@ const App={
       invf.addEventListener('submit',e=>{
         e.preventDefault();
         const v=UI.readForm(invf,[{name:'invoicePrefix'},{name:'taxPercent',type:'number'},{name:'upiId'},{name:'bankName'},{name:'bankAccount'},{name:'bankIfsc'},{name:'bankBranch'},{name:'signatureName'},{name:'invoiceTerms'},{name:'invoiceFooter'}]);
-        Object.assign(DB.data.settings,v);DB.save();U.toast('✓ Invoice settings saved','ok');
+        Object.assign(DB.data.settings,v);DB.save();U.toast('âœ“ Invoice settings saved','ok');
       });
     }
     const logoFile=document.getElementById('logoFile');
@@ -3479,7 +3495,7 @@ const App={
         const f=logoFile.files[0];if(!f)return;
         if(f.size>500000){U.toast('Logo must be under 500 KB','err');return}
         const dataUrl=await U.fileToDataURL(f);
-        DB.data.settings.logo=dataUrl;DB.save();U.toast('✓ Logo saved','ok');this.route();
+        DB.data.settings.logo=dataUrl;DB.save();U.toast('âœ“ Logo saved','ok');this.route();
       });
     }
     const pf=document.getElementById('prefsForm');
@@ -3487,7 +3503,7 @@ const App={
       pf.addEventListener('submit',e=>{
         e.preventDefault();
         const v=UI.readForm(pf,[{name:'lowStockThreshold',type:'number'}]);
-        Object.assign(DB.data.settings,v);DB.save();U.toast('✓ Preferences saved','ok');
+        Object.assign(DB.data.settings,v);DB.save();U.toast('âœ“ Preferences saved','ok');
       });
     }
     const rfInput=document.getElementById('restoreFile');
@@ -3502,7 +3518,7 @@ const App={
             const ok=await U.confirm('Restoring will REPLACE all current data. Continue?','Restore');
             if(!ok)return;
             DB.data=DB.normalize(parsed);DB.save();
-            U.toast('✓ Backup restored','ok');
+            U.toast('âœ“ Backup restored','ok');
             this.refresh();
           }catch(err){U.toast('Invalid backup file.','err')}
         };
@@ -3537,8 +3553,8 @@ window.addEventListener('resize',U.debounce(()=>{
   if(App.currentView==='cashflow')Views.afterCashflow(App.state);
 },260));
 
-window.addEventListener('online',()=>{ if(Cloud.enabled){Cloud.push();U.toast('Back online — syncing','ok')} });
-window.addEventListener('offline',()=>{ U.toast('You are offline — changes will sync later','warn') });
+window.addEventListener('online',()=>{ if(Cloud.enabled){Cloud.push();U.toast('Back online â€” syncing','ok')} });
+window.addEventListener('offline',()=>{ U.toast('You are offline â€” changes will sync later','warn') });
 </script>
 </body>
-</html>
+  </html>
